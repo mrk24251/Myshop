@@ -1,0 +1,58 @@
+{% load i18n %}
+
+<div class="slider-area home-2">
+    <div class="slider-active-3 owl-carousel slider-hm8 owl-dot-style">
+        <!-- Slider Single Item Start -->
+        <div class="slider-height-6 d-flex align-items-start justify-content-start bg-img" style="background-image: url(/static/assets/images/slider-image/sample-3.jpg);">
+            <div class="container">
+                <div class="slider-content-2 slider-animated-1 text-left">
+                    <span class="animated">{% trans "CACAO FRUTTI ROSSI" %}</span>
+                    <h1 class="animated">
+                        {% trans "La Girella Motta" %}<br />
+                        {% trans "Diventa Rosa" %}
+                    </h1>
+                    <a href="{% url "shop:product_list" %}" class="shop-btn animated">{% trans "SHOP NOW" %}</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Single Item End -->
+        <!-- Slider Single Item Start -->
+        <div class="slider-height-6 d-flex align-items-start justify-content-start bg-img" style="background-image: url(/static/assets/images/slider-image/sample-4.jpg);">
+            <div class="container">
+                <div class="slider-content-2 slider-animated-1 text-left">
+                    <span class="animated">{% trans "COFFEE CREAM & CHOCOLATE" %}</span>
+                    <h1 class="animated">
+                        {% trans "Girella Motta Cacao" %}<br />
+                        {% trans "Soft Sponge Cake" %}
+                    </h1>
+                    <a href="{% url "shop:product_list" %}" class="shop-btn animated">{% trans "SHOP NOW" %}</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slider Single Item End -->
+    </div>
+</div>
+<!-- Slider Arae End -->
+<!-- Banner Area Start -->
+<div class="banner-area home-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <div class="banner-wrapper">
+                    <a href="{% url "shop:product_list" %}"><img src="assets/images/banner-image/1.jpg" alt="" /></a>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12 mt-res-sx-30px">
+                <div class="banner-wrapper">
+                    <a href="{% url "shop:product_list" %}"><img src="assets/images/banner-image/2.jpg" alt="" /></a>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 mt-res-sx-30px">
+                <div class="banner-wrapper">
+                    <a href="{% url "shop:product_list" %}"><img src="assets/images/banner-image/3.jpg" alt="" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End -->
