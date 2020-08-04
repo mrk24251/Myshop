@@ -1,13 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@font-face
+{
+    font-family: Alama;
+    src: url(../font/Alama.otf);
+}
+@font-face
+{
+    font-family: Vazir;
+    src: url(../font/Vazir.ttf);
+}
+@font-face
+{
+    font-family: Nastaliq;
+    src: url(../font/IranNastaliq.ttf);
+}
 
 body { 
     margin:0;
     padding:0;
-    font-family:helvetica, sans-serif; 
+    font-family:helvetica,Vazir !important;
 }
 
 h1, h2, h3, h4, h5 , h6 { 
-    font-family: 'Ubuntu', sans-serif; font-weight:normal;
+    font-family: 'Ubuntu',Vazir; font-weight:normal;
 }
 
 a {

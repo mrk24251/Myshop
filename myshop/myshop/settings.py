@@ -130,6 +130,7 @@ PARLER_LANGUAGES = {
     None: (
         {'code': 'en'},
         {'code': 'es'},
+        {'code': 'fa'},
     ),
     'default': {
         'fallback': 'en',
@@ -154,6 +155,7 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', _('English')),
     ('es', _('Spanish')),
+    ('fa', _('Persian')),
 )
 
 TIME_ZONE = 'UTC'

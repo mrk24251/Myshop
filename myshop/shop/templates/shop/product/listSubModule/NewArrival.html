@@ -1,0 +1,77 @@
+{% load i18n %}
+<!-- New Arrivals Area Start -->
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+<div class="row">
+    <div class="col-md-12">
+        <!-- Section Title -->
+        <div class="section-title ml-0px">
+            <h2>New Arrivals</h2>
+            <p>Add new products to weekly line up</p>
+        </div>
+        <!-- Section Title -->
+    </div>
+</div>
+<!-- New Product Slider Start -->
+<div class="new-product-slider owl-carousel owl-nav-style">
+    {% for product in products %}
+    <div class="product-inner-item">
+
+<!--      <div class="item">-->
+<!--        <a href="{{ product.get_absolute_url }}">-->
+<!--          <img src="{% if product.image %}{{ product.image.url }}{% endif %}">-->
+<!--        </a>-->
+<!--        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>-->
+<!--        ${{ product.price }}-->
+<!--      </div>-->
+              <article class="list-product mb-30px">
+
+            <div class="img-block">
+                <a href="single-product.html" class="thumbnail">
+                    <img class="first-img" src="{% if product.image %}{{ product.image.url }}{% endif %}" alt="" />
+                    <img class="second-img" src="assets/images/product-image/organic/product-16.jpg" alt="" />
+                </a>
+                <div class="quick-view">
+                    <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+                        <i class="ion-ios-search-strong"></i>
+                    </a>
+                </div>
+            </div>
+            <ul class="product-flag">
+                <li class="new">New</li>
+            </ul>
+            <div class="product-decs">
+                <a class="inner-link" href="shop-4-column.html"><span>{{ product.name }}</span></a>
+                <h2><a href="single-product.html" class="product-link">{{ product.description|truncatewords:5 }}</a></h2>
+                <div class="rating-product">
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                    <i class="ion-android-star"></i>
+                </div>
+                <div class="pricing-meta">
+                    <ul>
+                        <li class="old-price">€{{ product.price }}</li>
+                        <li class="current-price">€21.51</li>
+                        <li class="discount-price">-10%</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="add-to-link">
+                <ul>
+                    <li class="cart"><a class="cart-btn" href="#">ADD TO CART </a></li>
+                    <li>
+                        <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
+                    </li>
+                    <li>
+                        <a href="compare.html"><i class="ion-ios-shuffle-strong"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+    </div>
+                        {% endfor %}
+</div>
+<!-- New Product Slider End -->
+</div>

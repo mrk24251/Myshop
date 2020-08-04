@@ -9,8 +9,12 @@ class Category(TranslatableModel):
                               db_index=True),
         slug=models.SlugField(max_length=200,
                               db_index=True,
-                              unique=True)
+                              unique=True,allow_unicode=True)
     )
+
+    image = models.ImageField(upload_to='categories/%Y/%m/%d',
+        blank=False,null=False)
+
 
     class Meta:
         # ordering = ('name',)
@@ -22,13 +26,13 @@ class Category(TranslatableModel):
 
     def get_absolute_url(self):
         return reverse('shop:product_list_by_category',
-                       args=[self.slug])
+                       args=[self.slug],allow_unicode=True)
 
 
 class Product(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=200, db_index=True),
-        slug=models.SlugField(max_length=200, db_index=True),
+        slug=models.SlugField(max_length=200, db_index=True, allow_unicode=True),
         description=models.TextField(blank=True)
     )
     category = models.ForeignKey(Category,

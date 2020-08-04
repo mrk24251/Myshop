@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-04 13:45+0430\n"
+"PO-Revision-Date: 2020-08-04 09:16+0000\n"
+"Last-Translator: b'  <admin@admin.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: myshop/settings.py:156
+msgid "English"
+msgstr ""
+
+#: myshop/settings.py:157
+msgid "Spanish"
+msgstr ""
+
+#: myshop/settings.py:158
+msgid "Persian"
+msgstr ""
+
+#: myshop/urls.py:9
+msgid "admin/"
+msgstr ""
+
+#: myshop/urls.py:11
+msgid "cart/"
+msgstr ""
+
+#: myshop/urls.py:12
+msgid "orders/"
+msgstr ""
+
+#: myshop/urls.py:14
+msgid "coupons/"
+msgstr ""
+
+#: payment/urls.py:8
+msgid "process/"
+msgstr ""
+
+#: payment/urls.py:9
+msgid "done/"
+msgstr ""
+
+#: payment/urls.py:10
+msgid "canceled/"
+msgstr ""
+
+#: shop/templates/shop/base.html:10 shop/templates/shop/base.html:42
+msgid "My shop"
+msgstr ""
+
+#: shop/templates/shop/base.html:47
+msgid "Language"
+msgstr ""
+
+#: shop/templates/shop/base.html:64
+msgid "Your cart"
+msgstr ""
+
+#: shop/templates/shop/base.html:66
+#, python-format
+msgid ""
+"-->\n"
+"<!--                                %(total_items)s item%(total_items_plural)s,-->\n"
+"<!--                                $%(total_price)s-->\n"
+"<!--                            "
+msgstr ""
+
+#: shop/templates/shop/base.html:72
+msgid "Your cart is empty."
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:19
+msgid "Add to cart"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:25
+msgid "People who bought this also bought"
+msgstr ""
+
+#: shop/templates/shop/product/landingPage.html:6
+#: shop/templates/shop/product/landingPage.html:24
+#: shop/templates/shop/product/list.html:6
+#: shop/templates/shop/product/list.html:24
+#: shop/templates/shop/product/listSubModule/popularCategories.html:51
+msgid "Products"
+msgstr "کالا ها"
+
+#: shop/templates/shop/product/landingPage.html:11
+#: shop/templates/shop/product/list.html:11
+msgid "Categories"
+msgstr "گروه ها"
+
+#: shop/templates/shop/product/landingPage.html:14
+#: shop/templates/shop/product/list.html:14
+msgid "All"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:9
+msgid "CACAO FRUTTI ROSSI"
+msgstr "کاکائو روسی"
+
+#: shop/templates/shop/product/listSubModule/banner.html:11
+msgid "La Girella Motta"
+msgstr "لا ژیرا موتا"
+
+#: shop/templates/shop/product/listSubModule/banner.html:12
+msgid "Diventa Rosa"
+msgstr "دیونتا مورتا"
+
+#: shop/templates/shop/product/listSubModule/banner.html:14
+#: shop/templates/shop/product/listSubModule/banner.html:28
+msgid "SHOP NOW"
+msgstr "خرید کنید"
+
+#: shop/templates/shop/product/listSubModule/banner.html:23
+msgid "COFFEE CREAM & CHOCOLATE"
+msgstr "قهوه خامه ای و شکلاتی"
+
+#: shop/templates/shop/product/listSubModule/banner.html:25
+msgid "Girella Motta Cacao"
+msgstr "کاکائو ژیرا مورتا"
+
+#: shop/templates/shop/product/listSubModule/banner.html:26
+msgid "Soft Sponge Cake"
+msgstr "کیک نرم اسفنجی"
+
+#: shop/templates/shop/product/listSubModule/popularCategories.html:31
+#| msgid "Categories"
+msgid "Popular Categories"
+msgstr "محبوب ترین گروه ها"
+
+#: shop/templates/shop/product/listSubModule/popularCategories.html:52
+msgid "Shop Now"
+msgstr "خرید"

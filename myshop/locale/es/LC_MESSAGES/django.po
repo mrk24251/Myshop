@@ -8,96 +8,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-22 01:38+0430\n"
-"PO-Revision-Date: 2020-06-28 08:36+0000\n"
-"Last-Translator: b'  <admin@admin.com>'\n"
+"POT-Creation-Date: 2020-08-04 13:45+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: cart/forms.py:11 cart/templates/cart/detail.html:16
-msgid "Quantity"
-msgstr "Cantidad"
-
-#: cart/templates/cart/detail.html:6 cart/templates/cart/detail.html:10
-#, fuzzy
-#| msgid "Your cart"
-msgid "Your shopping cart"
-msgstr "Tu carro"
-
-#: cart/templates/cart/detail.html:14
-msgid "Image"
-msgstr ""
-
-#: cart/templates/cart/detail.html:15
-#, fuzzy
-#| msgid "Products"
-msgid "Product"
-msgstr "Productos"
-
-#: cart/templates/cart/detail.html:17 cart/templates/cart/detail.html:40
-msgid "Remove"
-msgstr ""
-
-#: cart/templates/cart/detail.html:18
-msgid "Unit price"
-msgstr ""
-
-#: cart/templates/cart/detail.html:19
-msgid "Price"
-msgstr ""
-
-#: cart/templates/cart/detail.html:48
-msgid "Subtotal"
-msgstr ""
-
-#: cart/templates/cart/detail.html:53
-#, python-format
-msgid ""
-"\n"
-"              <td>\"%(code)s\" coupon (%(discount)s%% off)</td>\n"
-"          "
-msgstr ""
-
-#: cart/templates/cart/detail.html:63
-msgid "Total"
-msgstr ""
-
-#: cart/templates/cart/detail.html:73
-msgid "People who bought this also bought"
-msgstr "poewwwwwwwwwwwcdds   qwewe"
-
-#: cart/templates/cart/detail.html:84
-msgid "Apply a coupon"
-msgstr ""
-
-#: cart/templates/cart/detail.html:87
-msgid "Apply"
-msgstr ""
-
-#: cart/templates/cart/detail.html:91
-msgid "Continue shopping"
-msgstr ""
-
-#: cart/templates/cart/detail.html:93
-msgid "Checkout"
-msgstr ""
-
-#: coupons/forms.py:6
-msgid "Coupon"
-msgstr "Cupón"
-
-#: myshop/settings.py:138
+#: myshop/settings.py:156
 msgid "English"
-msgstr "Inglés"
+msgstr ""
 
-#: myshop/settings.py:139
+#: myshop/settings.py:157
 msgid "Spanish"
-msgstr "Español"
+msgstr ""
+
+#: myshop/settings.py:158
+msgid "Persian"
+msgstr ""
 
 #: myshop/urls.py:9
 msgid "admin/"
@@ -112,10 +43,8 @@ msgid "orders/"
 msgstr ""
 
 #: myshop/urls.py:14
-#, fuzzy
-#| msgid "Coupon"
 msgid "coupons/"
-msgstr "Cupón"
+msgstr ""
 
 #: payment/urls.py:8
 msgid "process/"
@@ -129,49 +58,91 @@ msgstr ""
 msgid "canceled/"
 msgstr ""
 
-#: shop/templates/shop/base.html:8 shop/templates/shop/base.html:14
+#: shop/templates/shop/base.html:10 shop/templates/shop/base.html:42
 msgid "My shop"
-msgstr "Mi tienda"
-
-#: shop/templates/shop/base.html:20
-msgid "Your cart"
-msgstr "Tu carro"
-
-#: shop/templates/shop/base.html:22
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                %(total_items)s item%(total_items_plural)s,\n"
-#| "                $%(total_price)s\n"
-#| "              "
-msgid ""
-"\n"
-"                                %(total_items)s item%(total_items_plural)s,\n"
-"                                $%(total_price)s\n"
-"                            "
 msgstr ""
-"\n"
-"                %(total_items)s producto%(total_items_plural)s,\n"
-"                $%(total_price)s\n"
-"              "
 
-#: shop/templates/shop/base.html:28
+#: shop/templates/shop/base.html:47
+msgid "Language"
+msgstr ""
+
+#: shop/templates/shop/base.html:64
+msgid "Your cart"
+msgstr ""
+
+#: shop/templates/shop/base.html:66
+#, python-format
+msgid ""
+"-->\n"
+"<!--                                %(total_items)s item"
+"%(total_items_plural)s,-->\n"
+"<!--                                $%(total_price)s-->\n"
+"<!--                            "
+msgstr ""
+
+#: shop/templates/shop/base.html:72
 msgid "Your cart is empty."
-msgstr "Tu carro está vacío."
+msgstr ""
 
 #: shop/templates/shop/product/detail.html:19
 msgid "Add to cart"
-msgstr "Añadir al carro"
+msgstr ""
 
+#: shop/templates/shop/product/detail.html:25
+msgid "People who bought this also bought"
+msgstr ""
+
+#: shop/templates/shop/product/landingPage.html:6
+#: shop/templates/shop/product/landingPage.html:24
 #: shop/templates/shop/product/list.html:6
 #: shop/templates/shop/product/list.html:24
+#: shop/templates/shop/product/listSubModule/popularCategories.html:51
 msgid "Products"
-msgstr "Productos"
+msgstr ""
 
+#: shop/templates/shop/product/landingPage.html:11
 #: shop/templates/shop/product/list.html:11
 msgid "Categories"
-msgstr "Categorías"
+msgstr ""
 
+#: shop/templates/shop/product/landingPage.html:14
 #: shop/templates/shop/product/list.html:14
 msgid "All"
-msgstr "Todos"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:9
+msgid "CACAO FRUTTI ROSSI"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:11
+msgid "La Girella Motta"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:12
+msgid "Diventa Rosa"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:14
+#: shop/templates/shop/product/listSubModule/banner.html:28
+msgid "SHOP NOW"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:23
+msgid "COFFEE CREAM & CHOCOLATE"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:25
+msgid "Girella Motta Cacao"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/banner.html:26
+msgid "Soft Sponge Cake"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/popularCategories.html:31
+msgid "Popular Categories"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/popularCategories.html:52
+msgid "Shop Now"
+msgstr ""

@@ -1,0 +1,59 @@
+{% load i18n %}
+{% load static %}
+
+<!--{% for c in categories %}-->
+<!--      <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>-->
+<!--      <img src="{% if c.image %}{{ c.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">-->
+<!--{% endfor %}-->
+<!--users = User.objects.annotate(course_count=Count('courses_joined'))\-->
+<!--.filter(course_count=0, date_joined__lte=date_joined)-->
+
+<!--similar_posts = similar_posts.annotate(same_tags=Count('tags'))\-->
+<!--.order_by('-same_tags','-publish')[:4]-->
+<!--return Post.published.annotate(-->
+<!--total_comments=Count('comments')-->
+<!--).order_by('-total_comments')[:count]-->
+
+<!--<span>hhhhhhhhhhh</span>-->
+<!--{% for c in popular_categories %}-->
+<!--    <span>jjjjjjjjjjjjjjjjjjjj</span>-->
+<!--<span></span>-->
+<!--{% endfor %}-->
+<!--{% for c in category_list %}-->
+<!--    <span>LLLLLLLLLLLLLLLLLL</span>-->
+<!--<span></span>-->
+<!--{% endfor %}-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>{% trans "Popular Categories" %}</h2>
+            </div>
+            <!-- Section Title -->
+        </div>
+    </div>
+    <!-- Category Slider Start -->
+    <div class="category-slider owl-carousel owl-nav-style">
+        <!-- Single item -->
+        {% for c in popular_categories %}
+            <div class="category-item">
+                <div class="category-list mb-30px">
+                    <div class="category-thumb">
+                        <a href="shop-4-column.html">
+                            <img src="{{c.image.url}}" alt="" />
+                        </a>
+                    </div>
+                    <div class="desc-listcategoreis">
+                        <div class="name_categories">
+                            <h4>{{c.name}}</h4>
+                        </div>
+                        <span class="number_product">{{c.products.count}} {% trans "Products" %}</span>
+                        <a href="shop-4-column.html"> {% trans "Shop Now" %} <i class="ion-android-arrow-dropright-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- Category Slider End  -->
+</div>

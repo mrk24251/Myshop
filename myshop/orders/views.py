@@ -11,11 +11,14 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 import weasyprint
+import redis
 
-
+# connect to redis
+r = redis.StrictRedis(host=settings.REDIS_HOST,
+    port=settings.REDIS_PORT,
+    db=settings.REDIS_DB)
 
 def order_create(request):
-
     cart = Cart(request)
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
@@ -28,10 +31,14 @@ def order_create(request):
             order.save()
 
             for item in cart:
+                category_id=item['product'].category.id
+                r.zincrby('category',
+                          1,category_id)
                 OrderItem.objects.create(order=order,
                     product=item['product'],
                     price=item['price'],
                     quantity=item['quantity'])
+
             # clear the cart
             cart.clear()
             # launch asynchronous task

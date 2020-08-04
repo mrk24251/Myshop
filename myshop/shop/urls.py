@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from . import views
 
 app_name = 'shop'
@@ -6,8 +6,8 @@ app_name = 'shop'
 urlpatterns = [
     path('', views.landing_page, name='landing_page'),
     path('list/', views.product_list, name='product_list'),
-    path('<slug:category_slug>/', views.product_list,
+    re_path(r'^(?P<slug>[\w-]+)/$', views.product_list,
         name='product_list_by_category'),
-    path('<int:id>/<slug:slug>/', views.product_detail,
+    re_path(r'^(?P<id>\d+)/(?P<slug>[\w-]+)/$', views.product_detail,
         name='product_detail'),
 ]

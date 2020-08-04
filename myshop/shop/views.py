@@ -1,7 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
+from orders.models import OrderItem
 from cart.forms import CartAddProductForm
 from .recommender import Recommender
+import redis
+from django.conf import settings
+
+# connect to redis
+r = redis.StrictRedis(host=settings.REDIS_HOST,
+    port=settings.REDIS_PORT,
+    db=settings.REDIS_DB)
 
 def product_list(request, category_slug=None):
     category = None
@@ -9,9 +17,7 @@ def product_list(request, category_slug=None):
     products = Product.objects.filter(available=True)
     if category_slug:
         language = request.LANGUAGE_CODE
-        category = get_object_or_404(Category,
-                                     translations__language_code=language,
-                                     translations__slug=category_slug)
+        category = get_object_or_404(Category,translations__language_code=language,translations__slug=category_slug)
         products = products.filter(category=category)
     return render(request,
         'shop/product/list.html',
@@ -19,21 +25,24 @@ def product_list(request, category_slug=None):
         'categories': categories,
         'products': products})
 
-def landing_page(request, category_slug=None):
-    category = None
-    categories = Category.objects.all()
-    products = Product.objects.filter(available=True)
-    if category_slug:
-        language = request.LANGUAGE_CODE
-        category = get_object_or_404(Category,
-                                     translations__language_code=language,
-                                     translations__slug=category_slug)
-        products = products.filter(category=category)
+def landing_page(request):
+    products = Product.objects.filter(available=True)[:12]
+    # return Post.published.annotate(
+    #     total_comments=Count('comments')
+    # ).order_by('-total_comments')[:count]
+    category_list = Category.objects.all()
+    popular_categories = r.zrange('category',0, -1, desc=True)[:6]
+
+    popular_categories_ids = [int(id) for id in popular_categories]
+    # get suggested products and sort by order of appearance
+    popular_categories1 = list(Category.objects.filter(id__in=popular_categories_ids))
+    popular_categories1.sort(key=lambda x: popular_categories_ids.index(x.id))
+
     return render(request,
         'shop/product/landingPage.html',
-        {'category': category,
-        'categories': categories,
-        'products': products})
+        {'products': products,
+         'popular_categories':popular_categories1,
+         'category_list':category_list})
 
 
 def product_detail(request, id, slug):
