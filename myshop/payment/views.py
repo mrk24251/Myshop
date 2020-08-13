@@ -6,6 +6,7 @@ from django.core.mail import EmailMessage
 from django.conf import settings
 import weasyprint
 from io import BytesIO
+from django.db.models import F
 
 def payment_process(request):
 
@@ -26,6 +27,11 @@ def payment_process(request):
 
         if result.is_success:
             # mark the order as paid
+            for item in order.items.all():
+                pp = item.product
+                pp.HotDealAmount = F('HotDealAmount') - item.quantity
+                pp.save()
+
             order.paid = True
             # store the unique transaction id
             order.braintree_id = result.transaction.id

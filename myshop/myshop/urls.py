@@ -4,8 +4,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.utils.translation import gettext_lazy as _
+from shop import views
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
+    path('selectcurrency', views.selectcurrency, name='selectcurrency'),
+]
+
+urlpatterns += i18n_patterns(
+    path('currencies/', include('currencies.urls')),
     path(_('admin/'), admin.site.urls),
     path('rosetta/', include('rosetta.urls')),
     path(_('cart/'), include('cart.urls', namespace='cart')),

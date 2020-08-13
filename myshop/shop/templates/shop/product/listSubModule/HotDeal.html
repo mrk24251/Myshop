@@ -1,0 +1,97 @@
+{% load i18n %}
+{% load currency %}
+{% load tz %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>{% trans "Hot Deals" %}</h2>
+                <p>{% trans "Add hot products to weekly line up" %}</p>
+            </div>
+            <!-- Section Title End-->
+        </div>
+    </div>
+    <!-- Category Slider Start -->
+    <div class="category-slider hot-deal owl-carousel owl-nav-style">
+<!--      <div class="hot-deal owl-carousel owl-nav-style mb-res-sm-30px mb-res-sm-30px">-->
+        <!-- Single item -->
+        {% for deal in hot_deal %}
+          {% if deal.is_hot_deal %}
+             <article style="min-height:770px;" class="list-product">
+                  <div class="img-block">
+                      <a href="single-product.html" class="thumbnail">
+                          <img class="first-img" id="hot_deal_image" src="{% if deal.image %}{{ deal.image.url }}{% endif %}" alt="" />
+                      </a>
+                      <div class="quick-view">
+                          <a class="quick_view" href="#" data-link-action="quickview" title="Quick view"
+                             data-url={{deal.image.url}} data-name={{deal.name}} data-description={{deal.description}}
+                             data-price={{deal.price}} data-discount={{deal.discount}}
+                             data-toggle="modal" data-target="#exampleModal">
+                              <i class="ion-ios-search-strong"></i>
+                          </a>
+                      </div>
+                  </div>
+                  {% if deal.is_new %}
+                      <ul class="product-flag">
+                          <li class="new">{% trans "New" %}</li>
+                      </ul>
+                  {% endif %}
+                  <div class="product-decs">
+                      <a class="inner-link" href="shop-4-column.html"><span>{{deal.name}}</span></a>
+                      <h2><a href="single-product.html" class="product-link">{{deal.description}}</a></h2>
+                      <div class="rating-product">
+                          <i class="ion-android-star"></i>
+                          <i class="ion-android-star"></i>
+                          <i class="ion-android-star"></i>
+                          <i class="ion-android-star"></i>
+                          <i class="ion-android-star"></i>
+                      </div>
+                      <div class="pricing-meta">
+                          {% if deal.discount %}
+                              <ul>
+                                  <li class="old-price">{{ deal.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                                  <li class="current-price">{{ deal.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
+                                  <li class="discount-price">-{{deal.discount}}%</li>
+                              </ul>
+                          {% endif %}
+                      </div>
+                      <div class="add-to-link">
+                          <ul>
+                            {% if deal.HotDealAmount > 0 %}
+                              <form action="{% url "cart:cart_add" deal.id %}" method="post">
+                                <input name="quantity" style="display:none;" value="1">
+                                  {% csrf_token %}
+                                  <li class="cart"><input class="cart-btn" type="submit" value="{% trans "Add to cart" %}"></li>
+                              </form>
+                            {% endif %}
+
+      <!--                        {% if deal.HotDealAmount > 0 %}-->
+      <!--                            <li class="cart"><a class="cart-btn" href="#">{% trans "ADD TO CART" %}</a></li>-->
+      <!--                        {% endif %}-->
+                              <li>
+                                  <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
+                              </li>
+
+                              <li>
+                                  <a href="compare.html"><i class="ion-ios-shuffle-strong"></i></a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  {% if deal.HotDealAmount > 0 %}
+                      <div class="in-stock">{% trans "Availability" %}: <span>{{deal.HotDealAmount}} {% trans "In Stock" %}</span></div>
+                  {% else %}
+                      <div class="discount-price">{% trans "ended up" %}</div>
+                  {% endif %}
+                  <div class="clockdiv">
+                      <div class="title_countdown">{% trans "Hurry Up! Offers ends in" %}:</div>
+                      <div data-countdown="{{deal.HotDeal_valid_to|date:'Y-m-d'}}"></div>
+                  </div>
+              </article>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <!-- Category Slider End  -->
+</div>

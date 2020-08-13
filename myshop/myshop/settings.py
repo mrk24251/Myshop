@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rosetta',
     'parler',
     'localflavor',
+    'currencies',
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+OPENEXCHANGERATES_APP_ID = "c2b2efcb306e075d9c2f2d0b614119ea"
 
 ROOT_URLCONF = 'myshop.urls'
 
@@ -78,6 +81,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'cart.context_processors.cart',
                 'django.contrib.messages.context_processors.messages',
+                'currencies.context_processors.currencies',
             ],
         },
     },
@@ -176,3 +180,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),
 )
+
+DEFAULT_CURRENCY ='USD'

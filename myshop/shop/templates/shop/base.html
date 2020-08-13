@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load static %}
+{% load currency %}
 
 <!DOCTYPE html>
 <html>
@@ -38,6 +39,20 @@
     </head>
 
     <body>
+
+<!--    <form id="currency_switcher" method="POST" action="{% url "selectcurrency" %}">{% csrf_token %}-->
+<!--  <select name="currency" onchange="submit()">-->
+<!--    {% for curr in CURRENCIES %}-->
+<!--      <option value="{{ curr.code }}" {% ifequal curr.code request.session.currency %}selected="selected"{% endifequal %}>-->
+<!--        {{ curr.dbol }} {{ curr.name }}-->
+<!--      </option>-->
+<!--    {% endfor %}-->
+<!--  </select>-->
+<!--  <noscript>-->
+<!--    <input type="submit" value="Set" />-->
+<!--  </noscript>-->
+<!--</form>-->
+<!--    <span>ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</span>-->
 <!--        <div id="header">-->
 <!--            <a href="/" class="logo">{% trans "My shop" %}</a>-->
 <!--            {% get_current_language as LANGUAGE_CODE %}-->
@@ -696,19 +711,28 @@
 
         <script src="{% static "assets/js/vendor/jquery-3.5.1.min.js" %}"></script>
         <script src="{% static "assets/js/vendor/modernizr-3.7.1.min.js" %}"></script>
-
-        <!--====== Plugins js ======-->
-        <!-- <script src="assets/js/plugins/bootstrap.min.js"></script>
-        <script src="assets/js/plugins/popper.min.js"></script>
-        <script src="assets/js/plugins/meanmenu.js"></script>
-        <script src="assets/js/plugins/owl-carousel.js"></script>
-        <script src="assets/js/plugins/jquery.nice-select.js"></script>
-        <script src="assets/js/plugins/countdown.js"></script>
-        <script src="assets/js/plugins/elevateZoom.js"></script>
-        <script src="assets/js/plugins/jquery-ui.min.js"></script>
-        <script src="assets/js/plugins/slick.js"></script>
-        <script src="assets/js/plugins/scrollup.js"></script>
-        <script src="assets/js/plugins/range-script.js"></script> -->
+        <script>
+            var csrftoken = Cookies.get('csrftoken');
+            function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+            $.ajaxSetup({
+                beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+            });
+            $(document).ready(function(){
+                {% block domready %}
+                {% endblock %}
+            });
+        </script>
+        <script>
+            {% block domjs %}
+            {% endblock %}
+        </script>
 
         <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
 

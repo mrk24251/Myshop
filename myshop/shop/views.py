@@ -5,6 +5,7 @@ from cart.forms import CartAddProductForm
 from .recommender import Recommender
 import redis
 from django.conf import settings
+from django.http import HttpResponseRedirect
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -26,6 +27,9 @@ def product_list(request, category_slug=None):
         'products': products})
 
 def landing_page(request):
+    if not request.session.has_key('currency'):
+        request.session['currency']= settings.DEFAULT_CURRENCY
+
     products = Product.objects.filter(available=True)[:12]
     # return Post.published.annotate(
     #     total_comments=Count('comments')
@@ -38,11 +42,18 @@ def landing_page(request):
     popular_categories1 = list(Category.objects.filter(id__in=popular_categories_ids))
     popular_categories1.sort(key=lambda x: popular_categories_ids.index(x.id))
 
+    hot_deals = Product.objects.filter(HotDeal=True)[:12]
+
+    cart_product_form = CartAddProductForm()
+
     return render(request,
         'shop/product/landingPage.html',
         {'products': products,
          'popular_categories':popular_categories1,
-         'category_list':category_list})
+         'category_list':category_list,
+         'hot_deal':hot_deals,
+         'cart_product_form': cart_product_form,
+         })
 
 
 def product_detail(request, id, slug):
@@ -62,3 +73,11 @@ def product_detail(request, id, slug):
         {'product': product,
          'cart_product_form': cart_product_form,
          'recommended_products': recommended_products})
+
+def selectcurrency(request):
+
+    lasturl = request.META.get('HTTP_REFERER')
+    if request.method == 'POST':
+        request.session['currency'] = request.POST['currency']
+
+    return HttpResponseRedirect(lasturl)

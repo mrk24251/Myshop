@@ -5,7 +5,6 @@ from django.core.validators import MinValueValidator,MaxValueValidator
 from coupons.models import Coupon
 from django.utils.translation import gettext_lazy as _
 
-
 class Order(models.Model):
 
     first_name = models.CharField(_('first name'),

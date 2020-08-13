@@ -30,19 +30,6 @@ a {
     color:#5993bb;
 }
 
-a:hover {
-    color:#77b6e2;
-}
-
-a.button, input[type="submit"] {
-    color:#fff;
-    background:#5993bb;
-    border-radius:4px;
-    padding:10px 20px;
-    font-size:14px;
-    border:0;
-}
-
 a.button.light {
     color:#666;
     background:#ededed;

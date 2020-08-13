@@ -1,34 +1,28 @@
 {% load i18n %}
-<!-- New Arrivals Area Start -->
-<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
-<div class="row">
-    <div class="col-md-12">
-        <!-- Section Title -->
-        <div class="section-title ml-0px">
-            <h2>New Arrivals</h2>
-            <p>Add new products to weekly line up</p>
-        </div>
-        <!-- Section Title -->
-    </div>
-</div>
-<!-- New Product Slider Start -->
-<div class="new-product-slider owl-carousel owl-nav-style">
-    {% for product in products %}
-    <div class="product-inner-item">
+{% load currency %}
 
-<!--      <div class="item">-->
-<!--        <a href="{{ product.get_absolute_url }}">-->
-<!--          <img src="{% if product.image %}{{ product.image.url }}{% endif %}">-->
-<!--        </a>-->
-<!--        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>-->
-<!--        ${{ product.price }}-->
-<!--      </div>-->
-              <article class="list-product mb-30px">
+<div class="container">
+
+  <div class="row">
+      <div class="col-md-12">
+          <!-- Section Title -->
+          <div class="section-title ml-0px">
+              <h2>{% trans "New Arrivals" %}</h2>
+              <p>{% trans "Add new products to weekly line up" %}</p>
+          </div>
+          <!-- Section Title -->
+      </div>
+  </div>
+  <!-- Category Slider Start -->
+  <div class="recent-product-slider owl-carousel owl-nav-style owl-loaded owl-drag">
+<!--      <div class="hot-deal owl-carousel owl-nav-style mb-res-sm-30px mb-res-sm-30px">-->
+      <!-- Single item -->
+    {% for product in products %}
+            <article style="min-height:373px;!important;" class="list-product">
 
             <div class="img-block">
                 <a href="single-product.html" class="thumbnail">
                     <img class="first-img" src="{% if product.image %}{{ product.image.url }}{% endif %}" alt="" />
-                    <img class="second-img" src="assets/images/product-image/organic/product-16.jpg" alt="" />
                 </a>
                 <div class="quick-view">
                     <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
@@ -36,9 +30,11 @@
                     </a>
                 </div>
             </div>
-            <ul class="product-flag">
-                <li class="new">New</li>
-            </ul>
+            {% if product.is_new %}
+              <ul class="product-flag">
+                  <li class="new">{% trans "New" %}</li>
+              </ul>
+            {% endif %}
             <div class="product-decs">
                 <a class="inner-link" href="shop-4-column.html"><span>{{ product.name }}</span></a>
                 <h2><a href="single-product.html" class="product-link">{{ product.description|truncatewords:5 }}</a></h2>
@@ -51,15 +47,27 @@
                 </div>
                 <div class="pricing-meta">
                     <ul>
-                        <li class="old-price">€{{ product.price }}</li>
-                        <li class="current-price">€21.51</li>
-                        <li class="discount-price">-10%</li>
+                        <li class="{% if product.discount %}old-price{% else %} price{% endif %}">{{ product.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                        {% if product.HotDealAmount < 1 %}
+                            <li class="discount-price">{% trans "ended up" %}</li>
+                        {% endif %}
+                        {% if product.discount %}
+                          <li class="current-price">{{ product.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
+                          <li class="discount-price">-{{product.discount}}%</li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
             <div class="add-to-link">
                 <ul>
-                    <li class="cart"><a class="cart-btn" href="#">ADD TO CART </a></li>
+                  {% if product.HotDealAmount > 0 %}
+                    <form action="{% url "cart:cart_add" product.id %}" method="post">
+                      <input name="quantity" style="display:none;" value="1">
+                        {% csrf_token %}
+                        <li class="cart"><input class="cart-btn" type="submit" value="{% trans "Add to cart" %}"></li>
+<!--                          <li class="cart"><a type="submit" class="cart-btn" href="#">{% trans "ADD TO CART" %}</a></li>-->
+                    </form>
+                  {% endif %}
                     <li>
                         <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
                     </li>
@@ -70,8 +78,7 @@
             </div>
         </article>
 
-    </div>
                         {% endfor %}
-</div>
-<!-- New Product Slider End -->
+  </div>
+  <!-- Category Slider End  -->
 </div>

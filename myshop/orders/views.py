@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .models import OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
+from shop.models import Product
 from .tasks import order_created
 from django.urls import reverse
 from django.contrib.admin.views.decorators import staff_member_required
@@ -12,6 +13,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 import weasyprint
 import redis
+from django.db.models import F
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -39,6 +41,10 @@ def order_create(request):
                     price=item['price'],
                     quantity=item['quantity'])
 
+                # pp=item['product']
+                # pp.HotDealAmount = F('HotDealAmount') - item['quantity']
+                # pp.save()
+
             # clear the cart
             cart.clear()
             # launch asynchronous task
@@ -64,6 +70,7 @@ def admin_order_detail(request, order_id):
 @staff_member_required
 def admin_order_pdf(request, order_id):
     order = get_object_or_404(Order, id=order_id)
+
     html = render_to_string('orders/order/pdf.html',
         {'order': order})
 

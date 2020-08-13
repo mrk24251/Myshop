@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-04 13:45+0430\n"
+"POT-Creation-Date: 2020-08-09 12:30+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,31 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: myshop/settings.py:156
+#: myshop/settings.py:160
 msgid "English"
 msgstr ""
 
-#: myshop/settings.py:157
+#: myshop/settings.py:161
 msgid "Spanish"
 msgstr ""
 
-#: myshop/settings.py:158
+#: myshop/settings.py:162
 msgid "Persian"
 msgstr ""
 
-#: myshop/urls.py:9
+#: myshop/urls.py:15
 msgid "admin/"
 msgstr ""
 
-#: myshop/urls.py:11
+#: myshop/urls.py:17
 msgid "cart/"
 msgstr ""
 
-#: myshop/urls.py:12
+#: myshop/urls.py:18
 msgid "orders/"
 msgstr ""
 
-#: myshop/urls.py:14
+#: myshop/urls.py:20
 msgid "coupons/"
 msgstr ""
 
@@ -58,19 +58,19 @@ msgstr ""
 msgid "canceled/"
 msgstr ""
 
-#: shop/templates/shop/base.html:10 shop/templates/shop/base.html:42
+#: shop/templates/shop/base.html:11 shop/templates/shop/base.html:57
 msgid "My shop"
 msgstr ""
 
-#: shop/templates/shop/base.html:47
+#: shop/templates/shop/base.html:62
 msgid "Language"
 msgstr ""
 
-#: shop/templates/shop/base.html:64
+#: shop/templates/shop/base.html:79
 msgid "Your cart"
 msgstr ""
 
-#: shop/templates/shop/base.html:66
+#: shop/templates/shop/base.html:81
 #, python-format
 msgid ""
 "-->\n"
@@ -80,7 +80,7 @@ msgid ""
 "<!--                            "
 msgstr ""
 
-#: shop/templates/shop/base.html:72
+#: shop/templates/shop/base.html:87
 msgid "Your cart is empty."
 msgstr ""
 
@@ -108,6 +108,49 @@ msgstr ""
 #: shop/templates/shop/product/landingPage.html:14
 #: shop/templates/shop/product/list.html:14
 msgid "All"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:10
+msgid "Hot Deals"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:11
+msgid "Add hot products to weekly line up"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:32
+#: shop/templates/shop/product/listSubModule/NewArrival.html:43
+msgid "New"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:57
+#: shop/templates/shop/product/listSubModule/NewArrival.html:72
+msgid "ADD TO CART"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:69
+msgid "Availability"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:69
+msgid "In Stock"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:71
+#: shop/templates/shop/product/listSubModule/NewArrival.html:60
+msgid "ended up"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/HotDeal.html:74
+msgid "Hurry Up! Offers ends in"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/NewArrival.html:10
+msgid "New Arrivals"
+msgstr ""
+
+#: shop/templates/shop/product/listSubModule/NewArrival.html:11
+msgid "Add new products to weekly line up"
 msgstr ""
 
 #: shop/templates/shop/product/listSubModule/banner.html:9
