@@ -24,7 +24,11 @@
                 <a href="single-product.html" class="thumbnail">
                     <img class="first-img" src="{% if product.image %}{{ product.image.url }}{% endif %}" alt="" />
                 </a>
-                <div class="quick-view">
+                <div class="quick-view quick-view1"
+                    data-url={% if product.image %}{{ product.image.url }}{% endif %} data-name={{product.name}} data-description={{product.description}}
+                    data-price={{product.price}} data-discount={{product.discount}} data-url3="{% if product.image3 %}{{product.image3.url}}{% endif %}"
+                    data-url1="{% if product.image1 %}{{product.image1.url}}{% endif %}" data-id={{product.id}}
+                     data-url2="{% if product.image2 %}{{product.image2.url}}{% endif %}">
                     <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
                         <i class="ion-ios-search-strong"></i>
                     </a>

@@ -864,19 +864,30 @@
 {% endblock %}
 
 {% block domready %}
-	$(".quick-view").on('click',function(e){
+	$(".quick-view1").on('click',function(e){
 		var ddd=$(this);
 		var name=ddd.data('name')
 		var description=ddd.data('description')
 		var discount=ddd.data('discount')
 		var price=ddd.data('price')
 		var url=ddd.data('url')
-<!--		filters=localStorage.getItem("filters");-->
-		$(".tab-pane.img").attr("src", $(this).data('url'));
+    var url1=ddd.data('url1')
+    var url2=ddd.data('url2')
+    var url3=ddd.data('url3')
+    var id=ddd.data('id')
 
-<!--		var user_like=$(this).data('userlike');-->
-<!--		console.log($(this).data('userlike'));-->
-<!--		$(".like").text(user_like);-->
+    $("#tab-pane-img").attr("src", $(this).data('url'));
+    $("#tab-pane-img-0").attr("src", $(this).data('url'));
+    $("#tab-pane-img-1").attr("src", $(this).data('url1'));
+    $("#pro-2-img").attr("src", $(this).data('url1'));
+    $("#tab-pane-img-2").attr("src", $(this).data('url2'));
+    $("#pro-3-img").attr("src", $(this).data('url2'));
+    $("#tab-pane-img-3").attr("src", $(this).data('url3'));
+    $("#pro-4-img").attr("src", $(this).data('url3'));
+    $("#form-deal").attr('action', 'cart/add/'+ id + '/');
+		$("#product-details-content-detail").text(name);
+    $("#modal-price").text(price);
+    $("#modal-description").text(description);
 
 <!--		$(".modal-one").text($(this).data('like'));-->
 <!--		$(".modal-two").text($(this).data('comment'));-->

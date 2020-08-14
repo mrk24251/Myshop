@@ -43,8 +43,13 @@ class Product(TranslatableModel):
         related_name='products',
         on_delete=models.CASCADE)
     image = models.ImageField(upload_to='products/%Y/%m/%d',
+        blank=False,null=False)
+    image1 = models.ImageField(upload_to='products/%Y/%m/%d',
         blank=True)
-
+    image2 = models.ImageField(upload_to='products/%Y/%m/%d',
+        blank=True)
+    image3 = models.ImageField(upload_to='products/%Y/%m/%d',
+        blank=True)
     available = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -75,9 +80,6 @@ class Product(TranslatableModel):
                    * self.price
 
     def get_total_price_after_discount(self):
-        return self.price - self.get_discount()
-
-    def gettotalpriceafterdiscount(self):
         return self.price - self.get_discount()
 
     def is_hot_deal(self):

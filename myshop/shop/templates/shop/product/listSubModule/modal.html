@@ -12,33 +12,33 @@
                     <div class="col-md-5 col-sm-12 col-xs-12">
                         <div class="tab-content quickview-big-img">
                             <div id="pro-1" class="tab-pane fade show active">
-                                <img id="tab-pane-img" src="" alt="" />
+                                <img style="height:300px;" id="tab-pane-img" src="" alt="" />
                             </div>
-<!--                            <div id="pro-2" class="tab-pane fade">-->
-<!--                                <img src="assets/images/product-image/organic/product-9.jpg" alt="" />-->
-<!--                            </div>-->
-<!--                            <div id="pro-3" class="tab-pane fade">-->
-<!--                                <img src="assets/images/product-image/organic/product-20.jpg" alt="" />-->
-<!--                            </div>-->
-<!--                            <div id="pro-4" class="tab-pane fade">-->
-<!--                                <img src="assets/images/product-image/organic/product-19.jpg" alt="" />-->
-<!--                            </div>-->
+                            <div id="pro-2" class="tab-pane fade">
+                                <img style="height:300px;" id="pro-2-img" src="" alt="" />
+                            </div>
+                            <div id="pro-3" class="tab-pane fade">
+                                <img style="height:300px;" id="pro-3-img" src="" alt="" />
+                            </div>
+                            <div id="pro-4" class="tab-pane fade">
+                                <img style="height:300px;" id="pro-4-img" src="" alt="" />
+                            </div>
                         </div>
                         <!-- Thumbnail Large Image End -->
                         <!-- Thumbnail Image End -->
                         <div class="quickview-wrap mt-15">
                             <div class="quickview-slide-active owl-carousel nav owl-nav-style owl-nav-style-2" role="tablist">
-                                <a class="active" data-toggle="tab" href="#pro-1"><img src="assets/images/product-image/organic/product-11.jpg" alt="" /></a>
-                                <a data-toggle="tab" href="#pro-2"><img src="{% static "assets/images/product-image/organic/product-9.jpg" %}" alt="" /></a>
-                                <a data-toggle="tab" href="#pro-3"><img src="{% static "assets/images/product-image/organic/product-20.jpg" %}" alt="" /></a>
-                                <a data-toggle="tab" href="#pro-4"><img src="{% static "assets/images/product-image/organic/product-19.jpg" %}" alt="" /></a>
+                                <a class="active" data-toggle="tab" href="#pro-1"><img style="height:125px;margin-top:15px;" id="tab-pane-img-0" src="" alt="" /></a>
+                                <a data-toggle="tab" href="#pro-2"><img style="height:125px;margin-top:15px;" id="tab-pane-img-1" src="" alt="" /></a>
+                                <a data-toggle="tab" href="#pro-3"><img style="height:125px;margin-top:15px;" id="tab-pane-img-2" src="" alt="" /></a>
+                                <a data-toggle="tab" href="#pro-4"><img style="height:125px;margin-top:15px;" id="tab-pane-img-3" src="" alt="" /></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">
                         <div class="product-details-content quickview-content">
-                            <h2>Originals Kaval Windbr</h2>
-                            <p class="reference">Reference:<span> demo_17</span></p>
+                            <h2 id="product-details-content-detail"></h2>
+<!--                            <p class="reference">Reference:<span> demo_17</span></p>-->
                             <div class="pro-details-rating-wrap">
                                 <div class="rating-product">
                                     <i class="ion-android-star"></i>
@@ -47,32 +47,35 @@
                                     <i class="ion-android-star"></i>
                                     <i class="ion-android-star"></i>
                                 </div>
-                                <span class="read-review"><a class="reviews" href="#">Read reviews (1)</a></span>
+<!--                                <span class="read-review"><a class="reviews" href="#">Read reviews (1)</a></span>-->
                             </div>
                             <div class="pricing-meta">
                                 <ul>
-                                    <li class="old-price not-cut">€18.90</li>
+                                    <li class="old-price not-cut" id="modal-price">€</li>
                                 </ul>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisic elit eiusm tempor incidid ut labore et dolore magna aliqua. Ut enim ad minim venialo quis nostrud exercitation ullamco</p>
-                            <div class="pro-details-size-color">
-                                <div class="pro-details-color-wrap">
-                                    <span>Color</span>
-                                    <div class="pro-details-color-content">
-                                        <ul>
-                                            <li class="blue"></li>
-                                            <li class="maroon active"></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <p id="modal-description"></p>
+<!--                            <div class="pro-details-size-color">-->
+<!--                                <div class="pro-details-color-wrap">-->
+<!--                                    <span>Color</span>-->
+<!--                                    <div class="pro-details-color-content">-->
+<!--                                        <ul>-->
+<!--                                            <li class="blue"></li>-->
+<!--                                            <li class="maroon active"></li>-->
+<!--                                        </ul>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="pro-details-quality">
+                              <form id="form-deal" action="" method="post">
                                 <div class="cart-plus-minus">
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
+                                    <input class="cart-plus-minus-box" type="text" name="quantity" value="1" />
                                 </div>
+                                {% csrf_token %}
                                 <div class="pro-details-cart btn-hover">
-                                    <a href="#"> + Add To Cart</a>
+                                    <input class="form-deal-submit" type="submit" value="{% trans "+ Add to cart" %}">
                                 </div>
+                              </form>
                             </div>
                             <div class="pro-details-wish-com">
                                 <div class="pro-details-wishlist">
