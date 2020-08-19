@@ -865,8 +865,8 @@
 
 {% block domready %}submit_compaare
   $(".compare_icon").on('click',function(e){
-    console.log("dddddddddddd");
-    $("#submit_compaare").click();
+    var ddd=$(this);
+    ddd.parent().children(".compare-form").children("#submit_compaare").click()
   })
 
 	$(".quick-view1").on('click',function(e){

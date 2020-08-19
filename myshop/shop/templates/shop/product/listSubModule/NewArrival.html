@@ -28,7 +28,7 @@
                     data-url={% if product.image %}{{ product.image.url }}{% endif %} data-name={{product.name}} data-description={{product.description}}
                     data-price={{product.price}} data-discount={{product.discount}} data-url3="{% if product.image3 %}{{product.image3.url}}{% endif %}"
                     data-url1="{% if product.image1 %}{{product.image1.url}}{% endif %}" data-id={{product.id}}
-                     data-url2="{% if product.image2 %}{{product.image2.url}}{% endif %}">
+                    data-url2="{% if product.image2 %}{{product.image2.url}}{% endif %}" data-amount="{{product.HotDealAmount}}">
                     <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
                         <i class="ion-ios-search-strong"></i>
                     </a>
@@ -76,7 +76,12 @@
                         <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
                     </li>
                     <li>
-                        <a href="compare.html"><i class="ion-ios-shuffle-strong"></i></a>
+                      <form class="compare-form" action="{% url "compare:compare_add" product.id %}" method="post">
+                          {{ compare_product_form }}
+                          {% csrf_token %}
+                          <input id="submit_compaare" type="submit" style="display:none;" value="{% trans "Add to compare" %}">
+                      </form>
+                      <span class="compare_icon"><i class="ion-ios-shuffle-strong"></i></span>
                     </li>
                 </ul>
             </div>

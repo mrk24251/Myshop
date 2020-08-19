@@ -76,7 +76,7 @@
                                   <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
                               </li>
                               <li>
-                                <form action="{% url "compare:compare_add" deal.id %}" method="post">
+                                <form class="compare-form" action="{% url "compare:compare_add" deal.id %}" method="post">
                                     {{ compare_product_form }}
                                     {% csrf_token %}
                                     <input id="submit_compaare" type="submit" style="display:none;" value="{% trans "Add to compare" %}">
