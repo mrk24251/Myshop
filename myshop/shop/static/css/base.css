@@ -34,7 +34,51 @@ input[type= "submit"]{
     outline:none;
 }
 
+.product-details-content .current-price {
+    font-size: 22px;
+    margin: 20px 0;
+}
+.add-to-link ul li span {
+    display: inline-block;
+    background: #fff;
+    color: #253237;
+    padding: 0;
+    text-align: center;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.pro-details-wish-com span i {
+    margin-right: 10px;
+}
+.pro-details-wish-com span {
+    line-height: 30px;
+    padding: 0;
+    border: none;
+    color: #555;
+    font-size: 14px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.pro-details-wish-com span:hover {
+    color: rgb(79, 182, 141);
+}
+.add-to-link ul li span i {
+    margin-right: 10px;
+    font-size: 21px;
+}
+.form-deal1{
+    display:none;
+}
+#modal-price {
+    font-size: 22px;
+    margin: 20px 0;
+}
+
 input[type= "submit"]:hover{
+    color: rgb(79, 182, 141);
+}
+
+.add-to-link ul li span:hover{
     color: rgb(79, 182, 141);
 }
 

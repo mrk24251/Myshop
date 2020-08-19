@@ -18,6 +18,12 @@
             {% csrf_token %}
             <input type="submit" value="{% trans "Add to cart" %}">
         </form>
+
+        <form action="{% url "compare:compare_add" product.id %}" method="post">
+            {{ compare_product_form }}
+            {% csrf_token %}
+            <input type="submit" value="{% trans "Add to compare" %}">
+        </form>
         {{ product.description|linebreaks }}
 
         {% if recommended_products %}

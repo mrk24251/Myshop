@@ -1,0 +1,45 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+  {% trans "Your shopping compare" %}
+{% endblock %}
+
+{% block content %}
+  <h1>{% trans "Your shopping compare" %}</h1>
+  <table class="cart">
+    <thead>
+      <tr>
+        <th>{% trans "Image" %}</th>
+        <th>{% trans "Product" %}</th>
+        <th>{% trans "Remove" %}</th>
+        <th>{% trans "Price" %}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in compare %}
+        {% with product=item.product %}
+          <tr>
+            <td>
+              <a href="{{ product.get_absolute_url }}">
+                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+              </a>
+            </td>
+            <td>{{ product.name }}</td>
+            <td><a href="{% url "compare:compare_remove" product.id %}">{% trans "Remove" %}</a></td>
+            <td class="num">${{ item.price }}</td>
+            <td class="num">${{ item.total_price }}</td>
+          </tr>
+        {% endwith %}
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p class="text-right">
+    <a href="{% url "shop:product_list" %}" class="button light">{% trans "Continue shopping" %}</a>
+    <a href="{% url "orders:order_create" %}" class="button">
+      {% trans "Checkout" %}
+    </a>
+  </p>
+{% endblock %}

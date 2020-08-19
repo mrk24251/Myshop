@@ -21,13 +21,14 @@
           {% if deal.is_hot_deal %}
              <article style="min-height:770px;" class="list-product">
                   <div class="img-block">
-                      <a href="single-product.html" class="thumbnail">
+                      <a href="{{ deal.get_absolute_url }}" class="thumbnail">
                           <img class="first-img" id="hot_deal_image" src="{% if deal.image %}{{ deal.image.url }}{% endif %}" alt="" />
                       </a>
                       <div class="quick-view quick-view1"
                         data-url={{deal.image.url}} data-name={{deal.name}} data-description={{deal.description}} data-id={{deal.id}}
-                        data-price={{deal.price}} data-discount={{deal.discount}} data-url3="{% if deal.image3 %}{{deal.image3.url}}{% endif %}"
-                        data-url1="{% if deal.image1 %}{{deal.image1.url}}{% endif %}" data-url2="{% if deal.image2 %}{{deal.image2.url}}{% endif %}">
+                        data-price={{deal.price|currency:request.session.currency}} data-discount={{deal.discount}} data-url3="{% if deal.image3 %}{{deal.image3.url}}{% endif %}"
+                        data-url1="{% if deal.image1 %}{{deal.image1.url}}{% endif %}" data-url2="{% if deal.image2 %}{{deal.image2.url}}{% endif %}"
+                        data-amount="{{deal.HotDealAmount}}">
                           <a class="quick_view" id="quick_view" href="#" data-link-action="quickview" title="Quick view"
                              data-toggle="modal" data-target="#exampleModal">
                               <i class="ion-ios-search-strong"></i>
@@ -41,7 +42,7 @@
                   {% endif %}
                   <div class="product-decs">
                       <a class="inner-link" href="shop-4-column.html"><span>{{deal.name}}</span></a>
-                      <h2><a href="single-product.html" class="product-link">{{deal.description}}</a></h2>
+                      <h2 class="description-h2"><a href="single-product.html" id="description" class="product-link">{{deal.description|linebreaks}}</a></h2>
                       <div class="rating-product">
                           <i class="ion-android-star"></i>
                           <i class="ion-android-star"></i>
@@ -50,13 +51,13 @@
                           <i class="ion-android-star"></i>
                       </div>
                       <div class="pricing-meta">
-                          {% if deal.discount %}
-                              <ul>
-                                  <li class="old-price">{{ deal.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
-                                  <li class="current-price">{{ deal.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
-                                  <li class="discount-price">-{{deal.discount}}%</li>
-                              </ul>
-                          {% endif %}
+                          <ul>
+                            <li id="old-price" class="{% if deal.discount %}old-price{% else %}price{% endif %}">{{ deal.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                            {% if deal.discount %}
+                              <li id="current-price" class="current-price">{{ deal.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
+                              <li  class="discount-price">-{{deal.discount}}%</li>
+                            {% endif %}
+                          </ul>
                       </div>
                       <div class="add-to-link">
                           <ul>
@@ -74,9 +75,13 @@
                               <li>
                                   <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
                               </li>
-
                               <li>
-                                  <a href="compare.html"><i class="ion-ios-shuffle-strong"></i></a>
+                                <form action="{% url "compare:compare_add" deal.id %}" method="post">
+                                    {{ compare_product_form }}
+                                    {% csrf_token %}
+                                    <input id="submit_compaare" type="submit" style="display:none;" value="{% trans "Add to compare" %}">
+                                </form>
+                                <span class="compare_icon"><i class="ion-ios-shuffle-strong"></i></span>
                               </li>
                           </ul>
                       </div>

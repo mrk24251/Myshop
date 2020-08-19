@@ -863,18 +863,27 @@
     {% include "./listSubModule/modal.html" %}
 {% endblock %}
 
-{% block domready %}
+{% block domready %}submit_compaare
+  $(".compare_icon").on('click',function(e){
+    console.log("dddddddddddd");
+    $("#submit_compaare").click();
+  })
+
 	$(".quick-view1").on('click',function(e){
 		var ddd=$(this);
-		var name=ddd.data('name')
-		var description=ddd.data('description')
+    $("#modal-price").removeClass( "old-price" );
+    $("#form-deal").removeClass( "form-deal1" );
+    var name=ddd.data('name')
 		var discount=ddd.data('discount')
-		var price=ddd.data('price')
 		var url=ddd.data('url')
     var url1=ddd.data('url1')
     var url2=ddd.data('url2')
     var url3=ddd.data('url3')
     var id=ddd.data('id')
+    var amount=ddd.data('amount')
+    var old_price = ddd.parent().parent().children(".product-decs").children(".pricing-meta").children().children("#old-price").text()
+    var current_price=ddd.parent().parent().children(".product-decs").children(".pricing-meta").children().children("#current-price").text()
+		var description=ddd.parent().parent().children(".product-decs").children(".description-h2").children(".product-link").text()
 
     $("#tab-pane-img").attr("src", $(this).data('url'));
     $("#tab-pane-img-0").attr("src", $(this).data('url'));
@@ -884,9 +893,22 @@
     $("#pro-3-img").attr("src", $(this).data('url2'));
     $("#tab-pane-img-3").attr("src", $(this).data('url3'));
     $("#pro-4-img").attr("src", $(this).data('url3'));
+    $("#compare_form").attr('action', 'compare/add/'+ id + '/');
     $("#form-deal").attr('action', 'cart/add/'+ id + '/');
 		$("#product-details-content-detail").text(name);
-    $("#modal-price").text(price);
+    $("#modal-price").text(old_price);
+    if (current_price) {
+        $("#modal-price").addClass( "old-price" );
+        $("#modal_discount").text("-"+discount+"%");
+    }else{
+        $("#modal_discount").text("0%");
+    }
+
+    if (amount < 1) {
+        $("#form-deal").addClass( "form-deal1" );
+    }
+
+    $("#modal_current-price").text(current_price);
     $("#modal-description").text(description);
 
 <!--		$(".modal-one").text($(this).data('like'));-->

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 12:30+0430\n"
-"PO-Revision-Date: 2020-08-09 08:06+0000\n"
+"POT-Creation-Date: 2020-08-18 09:10+0430\n"
+"PO-Revision-Date: 2020-08-18 04:43+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,15 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: myshop/settings.py:160
+#: compare/templates/compare/detail.html:6
+#: compare/templates/compare/detail.html:10
+msgid "Your shopping compare"
+msgstr ""
+
+#: compare/templates/compare/detail.html:14
+msgid "Image"
+msgstr ""
+
+#: compare/templates/compare/detail.html:15
+#, fuzzy
+#| msgid "Products"
+msgid "Product"
+msgstr "کالا ها"
+
+#: compare/templates/compare/detail.html:16
+#: compare/templates/compare/detail.html:30
+msgid "Remove"
+msgstr ""
+
+#: compare/templates/compare/detail.html:17
+msgid "Price"
+msgstr ""
+
+#: compare/templates/compare/detail.html:40
+msgid "Continue shopping"
+msgstr ""
+
+#: compare/templates/compare/detail.html:42
+msgid "Checkout"
+msgstr ""
+
+#: myshop/settings.py:164
 msgid "English"
 msgstr ""
 
-#: myshop/settings.py:161
+#: myshop/settings.py:165
 msgid "Spanish"
 msgstr ""
 
-#: myshop/settings.py:162
+#: myshop/settings.py:166
 msgid "Persian"
 msgstr ""
 
@@ -40,10 +72,14 @@ msgid "cart/"
 msgstr ""
 
 #: myshop/urls.py:18
+msgid "compare/"
+msgstr ""
+
+#: myshop/urls.py:19
 msgid "orders/"
 msgstr ""
 
-#: myshop/urls.py:20
+#: myshop/urls.py:21
 msgid "coupons/"
 msgstr ""
 
@@ -59,19 +95,19 @@ msgstr ""
 msgid "canceled/"
 msgstr ""
 
-#: shop/templates/shop/base.html:11 shop/templates/shop/base.html:57
+#: shop/templates/shop/base.html:11 shop/templates/shop/base.html:40
 msgid "My shop"
 msgstr ""
 
-#: shop/templates/shop/base.html:62
+#: shop/templates/shop/base.html:45
 msgid "Language"
 msgstr ""
 
-#: shop/templates/shop/base.html:79
+#: shop/templates/shop/base.html:62
 msgid "Your cart"
 msgstr ""
 
-#: shop/templates/shop/base.html:81
+#: shop/templates/shop/base.html:64
 #, python-format
 msgid ""
 "-->\n"
@@ -80,15 +116,22 @@ msgid ""
 "<!--                            "
 msgstr ""
 
-#: shop/templates/shop/base.html:87
+#: shop/templates/shop/base.html:70
 msgid "Your cart is empty."
 msgstr ""
 
 #: shop/templates/shop/product/detail.html:19
+#: shop/templates/shop/product/listSubModule/HotDeal.html:68
+#: shop/templates/shop/product/listSubModule/NewArrival.html:71
 msgid "Add to cart"
 msgstr ""
 
 #: shop/templates/shop/product/detail.html:25
+#: shop/templates/shop/product/listSubModule/modal.html:87
+msgid "Add to compare"
+msgstr "مقایسه"
+
+#: shop/templates/shop/product/detail.html:31
 msgid "People who bought this also bought"
 msgstr ""
 
@@ -115,34 +158,33 @@ msgid "Hot Deals"
 msgstr "پیشنهاد های ویژه"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:11
-#| msgid "Add new products to weekly line up"
 msgid "Add hot products to weekly line up"
 msgstr "پیشنهادات ویژه را به سبد هفتگی خود اضافه کن"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:32
-#: shop/templates/shop/product/listSubModule/NewArrival.html:43
+#: shop/templates/shop/product/listSubModule/HotDeal.html:40
+#: shop/templates/shop/product/listSubModule/NewArrival.html:39
 msgid "New"
 msgstr "جدید"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:57
+#: shop/templates/shop/product/listSubModule/HotDeal.html:73
 #: shop/templates/shop/product/listSubModule/NewArrival.html:72
 msgid "ADD TO CART"
 msgstr "افزودن به سبد"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:69
+#: shop/templates/shop/product/listSubModule/HotDeal.html:86
 msgid "Availability"
 msgstr "موجودی"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:69
+#: shop/templates/shop/product/listSubModule/HotDeal.html:86
 msgid "In Stock"
 msgstr "در انبار"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:71
-#: shop/templates/shop/product/listSubModule/NewArrival.html:60
+#: shop/templates/shop/product/listSubModule/HotDeal.html:88
+#: shop/templates/shop/product/listSubModule/NewArrival.html:56
 msgid "ended up"
 msgstr "اتمام موجودی"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:74
+#: shop/templates/shop/product/listSubModule/HotDeal.html:91
 msgid "Hurry Up! Offers ends in"
 msgstr "زمان باقیمانده تا پایان پیشنهاد"
 
@@ -182,6 +224,18 @@ msgstr "کاکائو ژیرا مورتا"
 #: shop/templates/shop/product/listSubModule/banner.html:26
 msgid "Soft Sponge Cake"
 msgstr "کیک نرم اسفنجی"
+
+#: shop/templates/shop/product/listSubModule/modal.html:78
+msgid "+ Add to cart"
+msgstr " افزودن به سبد +"
+
+#: shop/templates/shop/product/listSubModule/modal.html:84
+msgid "Add to wishlist"
+msgstr "افزودن به علاقه مندی ها"
+
+#: shop/templates/shop/product/listSubModule/modal.html:91
+msgid "Share"
+msgstr "اشتراک گذاری"
 
 #: shop/templates/shop/product/listSubModule/popularCategories.html:31
 msgid "Popular Categories"

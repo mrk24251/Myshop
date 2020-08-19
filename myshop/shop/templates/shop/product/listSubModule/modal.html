@@ -51,7 +51,9 @@
                             </div>
                             <div class="pricing-meta">
                                 <ul>
-                                    <li class="old-price not-cut" id="modal-price">€</li>
+                                    <li class="price" id="modal-price">€</li>
+                                    <li id="modal_current-price" class="current-price"></li>
+                                    <li id="modal_discount" class="discount-price"></li>
                                 </ul>
                             </div>
                             <p id="modal-description"></p>
@@ -67,7 +69,7 @@
 <!--                                </div>-->
 <!--                            </div>-->
                             <div class="pro-details-quality">
-                              <form id="form-deal" action="" method="post">
+                              <form id="form-deal" class="form-deal1" action="" method="post">
                                 <div class="cart-plus-minus">
                                     <input class="cart-plus-minus-box" type="text" name="quantity" value="1" />
                                 </div>
@@ -79,31 +81,36 @@
                             </div>
                             <div class="pro-details-wish-com">
                                 <div class="pro-details-wishlist">
-                                    <a href="#"><i class="ion-android-favorite-outline"></i>Add to wishlist</a>
+                                    <a href="#"><i class="ion-android-favorite-outline"></i>{% trans "Add to wishlist" %}</a>
                                 </div>
                                 <div class="pro-details-compare">
-                                    <a href="#"><i class="ion-ios-shuffle-strong"></i>Add to compare</a>
+                                    <form id="compare_form" action="" method="post">
+                                        <input type="hidden" name="update" value="False" id="id_update">
+                                        {% csrf_token %}
+                                        <input id="submit_compaare" type="submit" style="display:none;" value="">
+                                    </form>
+                                    <span class="compare_icon"><i class="ion-ios-shuffle-strong"></i>{% trans "Add to compare" %}</span>
                                 </div>
                             </div>
-                            <div class="pro-details-social-info">
-                                <span>Share</span>
-                                <div class="social-info">
-                                    <ul>
-                                        <li>
-                                            <a href="#"><i class="ion-social-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="ion-social-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="ion-social-google"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><i class="ion-social-instagram"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+<!--                            <div class="pro-details-social-info">-->
+<!--                                <span>{% trans "Share" %}</span>-->
+<!--                                <div class="social-info">-->
+<!--                                    <ul>-->
+<!--                                        <li>-->
+<!--                                            <a href="#"><i class="ion-social-facebook"></i></a>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <a href="#"><i class="ion-social-twitter"></i></a>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <a href="#"><i class="ion-social-google"></i></a>-->
+<!--                                        </li>-->
+<!--                                        <li>-->
+<!--                                            <a href="#"><i class="ion-social-instagram"></i></a>-->
+<!--                                        </li>-->
+<!--                                    </ul>-->
+<!--                                </div>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </div>

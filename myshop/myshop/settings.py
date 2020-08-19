@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
+    'compare.apps.CompareConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
     'coupons.apps.CouponsConfig',
@@ -49,6 +50,8 @@ INSTALLED_APPS = [
     'localflavor',
     'currencies',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -151,6 +154,7 @@ EMAIL_USE_TLS = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 CART_SESSION_ID = 'cart'
+COMPARE_SESSION_ID = 'compare'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

@@ -15,6 +15,7 @@ urlpatterns += i18n_patterns(
     path(_('admin/'), admin.site.urls),
     path('rosetta/', include('rosetta.urls')),
     path(_('cart/'), include('cart.urls', namespace='cart')),
+    path(_('compare/'), include('compare.urls', namespace='compare')),
     path(_('orders/'), include('orders.urls', namespace='orders')),
     path(_(('payment/')), include('payment.urls', namespace='payment')),
     path(_('coupons/'), include('coupons.urls', namespace='coupons')),

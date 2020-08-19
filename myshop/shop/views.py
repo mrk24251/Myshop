@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
 from orders.models import OrderItem
 from cart.forms import CartAddProductForm
+from compare.forms import CompareAddProductForm
 from .recommender import Recommender
 import redis
 from django.conf import settings
@@ -45,6 +46,7 @@ def landing_page(request):
     hot_deals = Product.objects.filter(HotDeal=True)[:12]
 
     cart_product_form = CartAddProductForm()
+    compare_product_form = CompareAddProductForm()
 
     return render(request,
         'shop/product/landingPage.html',
@@ -53,6 +55,7 @@ def landing_page(request):
          'category_list':category_list,
          'hot_deal':hot_deals,
          'cart_product_form': cart_product_form,
+         'compare_product_form': compare_product_form,
          })
 
 
@@ -63,6 +66,7 @@ def product_detail(request, id, slug):
         available=True,
         translations__language_code=language,
         translations__slug=slug,)
+    compare_product_form = CompareAddProductForm()
     cart_product_form = CartAddProductForm()
 
     r = Recommender()
@@ -71,7 +75,7 @@ def product_detail(request, id, slug):
     return render(request,
         'shop/product/detail.html',
         {'product': product,
-         'cart_product_form': cart_product_form,
+         'compare_product_form': compare_product_form,
          'recommended_products': recommended_products})
 
 def selectcurrency(request):
