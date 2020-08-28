@@ -18,7 +18,7 @@
 <!--      <div class="hot-deal owl-carousel owl-nav-style mb-res-sm-30px mb-res-sm-30px">-->
       <!-- Single item -->
     {% for product in products %}
-            <article style="min-height:373px;!important;" class="list-product">
+        <article style="min-height:373px;!important;" class="list-product">
 
             <div class="img-block">
                 <a href="single-product.html" class="thumbnail">
@@ -41,7 +41,7 @@
             {% endif %}
             <div class="product-decs">
                 <a class="inner-link" href="shop-4-column.html"><span>{{ product.name }}</span></a>
-                <h2><a href="single-product.html" class="product-link">{{ product.description|truncatewords:5 }}</a></h2>
+                <h2 class="description-h2"><a href="single-product.html" class="product-link">{{ product.description|truncatewords:5 }}</a></h2>
                 <div class="rating-product">
                     <i class="ion-android-star"></i>
                     <i class="ion-android-star"></i>
@@ -51,12 +51,12 @@
                 </div>
                 <div class="pricing-meta">
                     <ul>
-                        <li class="{% if product.discount %}old-price{% else %} price{% endif %}">{{ product.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                        <li id="old-price" class="{% if product.discount %}old-price{% else %} price{% endif %}">{{ product.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
                         {% if product.HotDealAmount < 1 %}
                             <li class="discount-price">{% trans "ended up" %}</li>
                         {% endif %}
                         {% if product.discount %}
-                          <li class="current-price">{{ product.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
+                          <li id="current-price" class="current-price">{{ product.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
                           <li class="discount-price">-{{product.discount}}%</li>
                         {% endif %}
                     </ul>
