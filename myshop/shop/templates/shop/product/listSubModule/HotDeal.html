@@ -37,12 +37,13 @@
                   </div>
                   {% if deal.is_new %}
                       <ul class="product-flag">
-                          <li class="new">{% trans "New" %}</li>
+                          <li  class="new">{% trans "New" %}</li>
                       </ul>
                   {% endif %}
                   <div class="product-decs">
                       <a class="inner-link" href="shop-4-column.html"><span>{{deal.name}}</span></a>
-                      <h2 class="description-h2"><a href="single-product.html" id="description" class="product-link">{{deal.description|linebreaks}}</a></h2>
+                      <h2 style="display:none;" class="description-h2-1" ><a id="description" href="single-product.html" class="product-link">{{deal.description|linebreaks}}</a></h2>
+                      <h2 class="description-h2"><a href="single-product.html" class="product-link">{{deal.description|linebreaks|truncatechars:35}}</a></h2>
                       <div class="rating-product">
                           <i class="ion-android-star"></i>
                           <i class="ion-android-star"></i>
@@ -52,7 +53,7 @@
                       </div>
                       <div class="pricing-meta">
                           <ul>
-                            <li id="old-price" class="{% if deal.discount %}old-price{% else %}price{% endif %}">{{ deal.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                            <li id="old-price"  class="{% if deal.discount %}old-price{% else %}price{% endif %}">{{ deal.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
                             {% if deal.discount %}
                               <li id="current-price" class="current-price">{{ deal.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
                               <li  class="discount-price">-{{deal.discount}}%</li>

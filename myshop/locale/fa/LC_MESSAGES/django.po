@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 09:10+0430\n"
-"PO-Revision-Date: 2020-08-18 04:43+0000\n"
+"POT-Creation-Date: 2020-08-30 17:39+0430\n"
+"PO-Revision-Date: 2020-08-30 13:10+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -95,39 +95,20 @@ msgstr ""
 msgid "canceled/"
 msgstr ""
 
-#: shop/templates/shop/base.html:11 shop/templates/shop/base.html:40
+#: shop/templates/shop/base.html:11
 msgid "My shop"
 msgstr ""
 
-#: shop/templates/shop/base.html:45
-msgid "Language"
-msgstr ""
-
-#: shop/templates/shop/base.html:62
-msgid "Your cart"
-msgstr ""
-
-#: shop/templates/shop/base.html:64
-#, python-format
-msgid ""
-"-->\n"
-"<!--                                %(total_items)s item%(total_items_plural)s,-->\n"
-"<!--                                $%(total_price)s-->\n"
-"<!--                            "
-msgstr ""
-
-#: shop/templates/shop/base.html:70
-msgid "Your cart is empty."
-msgstr ""
-
 #: shop/templates/shop/product/detail.html:19
-#: shop/templates/shop/product/listSubModule/HotDeal.html:68
-#: shop/templates/shop/product/listSubModule/NewArrival.html:71
+#: shop/templates/shop/product/listSubModule/HotDeal.html:69
+#: shop/templates/shop/product/listSubModule/NewArrival.html:72
 msgid "Add to cart"
 msgstr ""
 
 #: shop/templates/shop/product/detail.html:25
-#: shop/templates/shop/product/listSubModule/modal.html:87
+#: shop/templates/shop/product/listSubModule/HotDeal.html:83
+#: shop/templates/shop/product/listSubModule/NewArrival.html:83
+#: shop/templates/shop/product/listSubModule/modal.html:92
 msgid "Add to compare"
 msgstr "مقایسه"
 
@@ -166,25 +147,26 @@ msgstr "پیشنهادات ویژه را به سبد هفتگی خود اضاف�
 msgid "New"
 msgstr "جدید"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:73
-#: shop/templates/shop/product/listSubModule/NewArrival.html:72
+#: shop/templates/shop/product/listSubModule/HotDeal.html:74
+#: shop/templates/shop/product/listSubModule/NewArrival.html:73
 msgid "ADD TO CART"
 msgstr "افزودن به سبد"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:86
+#: shop/templates/shop/product/listSubModule/HotDeal.html:91
 msgid "Availability"
 msgstr "موجودی"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:86
+#: shop/templates/shop/product/listSubModule/HotDeal.html:91
 msgid "In Stock"
 msgstr "در انبار"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:88
-#: shop/templates/shop/product/listSubModule/NewArrival.html:56
+#: shop/templates/shop/product/listSubModule/HotDeal.html:93
+#: shop/templates/shop/product/listSubModule/NewArrival.html:57
+#: shop/templates/shop/product/listSubModule/bestselling.html:50
 msgid "ended up"
 msgstr "اتمام موجودی"
 
-#: shop/templates/shop/product/listSubModule/HotDeal.html:91
+#: shop/templates/shop/product/listSubModule/HotDeal.html:96
 msgid "Hurry Up! Offers ends in"
 msgstr "زمان باقیمانده تا پایان پیشنهاد"
 
@@ -225,6 +207,49 @@ msgstr "کاکائو ژیرا مورتا"
 msgid "Soft Sponge Cake"
 msgstr "کیک نرم اسفنجی"
 
+#: shop/templates/shop/product/listSubModule/bestselling.html:10
+#| msgid "Products"
+msgid "Popular Products"
+msgstr "محبوب ترین کالا ها"
+
+#: shop/templates/shop/product/listSubModule/bestselling.html:11
+#| msgid "Add hot products to weekly line up"
+msgid "Add popular products to weekly line up"
+msgstr "محبوب ترین کالاها  را به سبد هفتگی خود اضافه کن"
+
+#: shop/templates/shop/product/listSubModule/feature.html:12
+msgid "Free Shipping"
+msgstr "ارسال رایگان"
+
+#: shop/templates/shop/product/listSubModule/feature.html:13
+msgid "On all orders over $75.00"
+msgstr "برای تمام خرید های بالاتر از 75.00 دلار"
+
+#: shop/templates/shop/product/listSubModule/feature.html:23
+msgid "Free Returns"
+msgstr "بازگشت رایگان"
+
+#: shop/templates/shop/product/listSubModule/feature.html:24
+msgid "Returns are free within 9 days"
+msgstr "بازگشت رایگان تا 9 روز بعد از خرید"
+
+#: shop/templates/shop/product/listSubModule/feature.html:34
+#, python-format
+msgid "100%% Payment Secure"
+msgstr "پرداخت ایمن"
+
+#: shop/templates/shop/product/listSubModule/feature.html:35
+msgid "Your payment are safe with us."
+msgstr "پرداخت امن با پرداخت اینترنتی"
+
+#: shop/templates/shop/product/listSubModule/feature.html:45
+msgid "Support 24/7"
+msgstr "پشتیبانی 24 ساعته"
+
+#: shop/templates/shop/product/listSubModule/feature.html:46
+msgid "Contact us 24 hours a day"
+msgstr "در 24 ساعت شبانه روز با ما تماس بگیرید"
+
 #: shop/templates/shop/product/listSubModule/modal.html:78
 msgid "+ Add to cart"
 msgstr " افزودن به سبد +"
@@ -233,7 +258,7 @@ msgstr " افزودن به سبد +"
 msgid "Add to wishlist"
 msgstr "افزودن به علاقه مندی ها"
 
-#: shop/templates/shop/product/listSubModule/modal.html:91
+#: shop/templates/shop/product/listSubModule/modal.html:96
 msgid "Share"
 msgstr "اشتراک گذاری"
 

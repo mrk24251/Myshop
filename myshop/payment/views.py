@@ -7,6 +7,13 @@ from django.conf import settings
 import weasyprint
 from io import BytesIO
 from django.db.models import F
+import redis
+from shop.models import Product
+
+# connect to redis
+r = redis.StrictRedis(host=settings.REDIS_HOST,
+    port=settings.REDIS_PORT,
+    db=settings.REDIS_DB)
 
 def payment_process(request):
 

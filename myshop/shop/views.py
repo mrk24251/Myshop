@@ -35,13 +35,20 @@ def landing_page(request):
     # return Post.published.annotate(
     #     total_comments=Count('comments')
     # ).order_by('-total_comments')[:count]
+
     category_list = Category.objects.all()
     popular_categories = r.zrange('category',0, -1, desc=True)[:6]
+    popular_products = r.zrange('product', 0, -1, desc=True)[:12]
 
     popular_categories_ids = [int(id) for id in popular_categories]
+    popular_products_ids = [int(id) for id in popular_products]
+
     # get suggested products and sort by order of appearance
     popular_categories1 = list(Category.objects.filter(id__in=popular_categories_ids))
     popular_categories1.sort(key=lambda x: popular_categories_ids.index(x.id))
+
+    popular_products1 = list(Product.objects.filter(id__in=popular_products_ids))
+    popular_products1.sort(key=lambda x: popular_products_ids.index(x.id))
 
     hot_deals = Product.objects.filter(HotDeal=True)[:12]
 
@@ -52,6 +59,7 @@ def landing_page(request):
         'shop/product/landingPage.html',
         {'products': products,
          'popular_categories':popular_categories1,
+         'popular_products':popular_products1,
          'category_list':category_list,
          'hot_deal':hot_deals,
          'cart_product_form': cart_product_form,

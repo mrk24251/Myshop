@@ -13,7 +13,6 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 import weasyprint
 import redis
-from django.db.models import F
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -36,6 +35,12 @@ def order_create(request):
                 category_id=item['product'].category.id
                 r.zincrby('category',
                           1,category_id)
+
+                product_id = item['product'].id
+
+                r.zincrby('product',
+                          1, product_id)
+
                 OrderItem.objects.create(order=order,
                     product=item['product'],
                     price=item['price'],
