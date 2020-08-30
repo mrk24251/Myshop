@@ -124,140 +124,129 @@
 <!--    </section>-->
     {% include "./listSubModule/feature.html" %}
     {% include "./listSubModule/bestselling.html" %}
-    <!-- Banner Area 2 Start -->
-    <div class="banner-area-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="banner-inner">
-                        <a href="shop-4-column.html"><img src="{% static "assets/images/banner-image/4.jpg"}" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Banner Area 2 End -->
+    {% include "./listSubModule/banner2.html" %}
+
     <!--  Blog Area start -->
-    <section class="blog-area mb-30px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Section Title -->
-                    <div class="section-title">
-                        <h2>Latest Blogs</h2>
-                        <p>Present posts in a best way to highlight interesting moments of your blog.</p>
-                    </div>
-                    <!-- Section Title -->
-                </div>
-            </div>
-            <!-- Blog Slider Start -->
-            <div class="blog-slider-active owl-carousel owl-nav-style">
-                <!-- single item -->
-                <article class="blog-post">
-                    <div class="blog-post-top">
-                        <div class="blog-img">
-                            <img src="assets/images/blog-image/blog-1.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="blog-post-content d-flex">
-                        <div class="blog-post-content-cell">
-                            <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>
-                            <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is First Post For XipBlog</a></h4>
-                            <p class="blog-text">
-                                Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...
-                            </p>
-                            <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
-                        </div>
-                    </div>
-                </article>
-                <!-- single item -->
-                <article class="blog-post">
-                    <div class="blog-post-top">
-                        <div class="blog-img">
-                            <img src="assets/images/blog-image/blog-2.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="blog-post-content d-flex">
-                        <div class="blog-post-content-cell">
-                            <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>
-                            <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is Secound Post For XipBlog</a></h4>
-                            <p class="blog-text">
-                                Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...
-                            </p>
-                            <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
-                        </div>
-                    </div>
-                </article>
-                <!-- single item -->
-                <article class="blog-post">
-                    <div class="blog-post-top">
-                        <div class="blog-img">
-                            <img src="assets/images/blog-image/blog-2.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="blog-post-content d-flex">
-                        <div class="blog-post-content-cell">
-                            <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>
-                            <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is Third Post For XipBlog</a></h4>
-                            <p class="blog-text">
-                                Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...
-                            </p>
-                            <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
-                        </div>
-                    </div>
-                </article>
-                <!-- single item -->
-                <article class="blog-post">
-                    <div class="blog-post-top">
-                        <div class="blog-img">
-                            <img src="assets/images/blog-image/blog-1.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="blog-post-content">
-                        <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>
-                        <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is Foruth Post For XipBlog</a></h4>
-                        <p class="blog-text">
-                            Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...
-                        </p>
-                        <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>
-                    </div>
-                </article>
-                <!-- single item -->
-            </div>
-            <!--  Blog Slider End -->
-        </div>
-    </section>
+<!--    <section class="blog-area mb-30px">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-12">-->
+<!--                    &lt;!&ndash; Section Title &ndash;&gt;-->
+<!--                    <div class="section-title">-->
+<!--                        <h2>Latest Blogs</h2>-->
+<!--                        <p>Present posts in a best way to highlight interesting moments of your blog.</p>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; Section Title &ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; Blog Slider Start &ndash;&gt;-->
+<!--            <div class="blog-slider-active owl-carousel owl-nav-style">-->
+<!--                &lt;!&ndash; single item &ndash;&gt;-->
+<!--                <article class="blog-post">-->
+<!--                    <div class="blog-post-top">-->
+<!--                        <div class="blog-img">-->
+<!--                            <img src="assets/images/blog-image/blog-1.jpg" alt="" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="blog-post-content d-flex">-->
+<!--                        <div class="blog-post-content-cell">-->
+<!--                            <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>-->
+<!--                            <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is First Post For XipBlog</a></h4>-->
+<!--                            <p class="blog-text">-->
+<!--                                Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...-->
+<!--                            </p>-->
+<!--                            <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </article>-->
+<!--                &lt;!&ndash; single item &ndash;&gt;-->
+<!--                <article class="blog-post">-->
+<!--                    <div class="blog-post-top">-->
+<!--                        <div class="blog-img">-->
+<!--                            <img src="assets/images/blog-image/blog-2.jpg" alt="" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="blog-post-content d-flex">-->
+<!--                        <div class="blog-post-content-cell">-->
+<!--                            <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>-->
+<!--                            <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is Secound Post For XipBlog</a></h4>-->
+<!--                            <p class="blog-text">-->
+<!--                                Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...-->
+<!--                            </p>-->
+<!--                            <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </article>-->
+<!--                &lt;!&ndash; single item &ndash;&gt;-->
+<!--                <article class="blog-post">-->
+<!--                    <div class="blog-post-top">-->
+<!--                        <div class="blog-img">-->
+<!--                            <img src="assets/images/blog-image/blog-2.jpg" alt="" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="blog-post-content d-flex">-->
+<!--                        <div class="blog-post-content-cell">-->
+<!--                            <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>-->
+<!--                            <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is Third Post For XipBlog</a></h4>-->
+<!--                            <p class="blog-text">-->
+<!--                                Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...-->
+<!--                            </p>-->
+<!--                            <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </article>-->
+<!--                &lt;!&ndash; single item &ndash;&gt;-->
+<!--                <article class="blog-post">-->
+<!--                    <div class="blog-post-top">-->
+<!--                        <div class="blog-img">-->
+<!--                            <img src="assets/images/blog-image/blog-1.jpg" alt="" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="blog-post-content">-->
+<!--                        <a href="blog-grid-left-sidebar.html" class="blog-meta">Fashion</a>-->
+<!--                        <h4 class="blog-post-heading"><a href="blog-single-left-sidebar.html">This is Foruth Post For XipBlog</a></h4>-->
+<!--                        <p class="blog-text">-->
+<!--                            Lorem Ipsum is simply dummy text of the printing and typeSettings industry. Lorem Ipsum has been the industrys ...-->
+<!--                        </p>-->
+<!--                        <a class="read-more-btn" href="blog-single-left-sidebar.html"> Read More <i class="ion-android-arrow-dropright-circle"></i></a>-->
+<!--                    </div>-->
+<!--                </article>-->
+<!--                &lt;!&ndash; single item &ndash;&gt;-->
+<!--            </div>-->
+<!--            &lt;!&ndash;  Blog Slider End &ndash;&gt;-->
+<!--        </div>-->
+<!--    </section>-->
     <!--  Blog Area start -->
     <!-- Brand area start -->
-    <div class="brand-area">
-        <div class="container">
-            <div class="border-1px">
-                <div class="brand-slider owl-carousel owl-nav-style owl-nav-style-2">
-                    <div class="brand-slider-item">
-                        <a href="#"><img src="assets/images/brand-logo/1.jpg" alt="" /></a>
-                    </div>
-                    <div class="brand-slider-item">
-                        <a href="#"><img src="assets/images/brand-logo/2.jpg" alt="" /></a>
-                    </div>
-                    <div class="brand-slider-item">
-                        <a href="#"><img src="assets/images/brand-logo/3.jpg" alt="" /></a>
-                    </div>
-                    <div class="brand-slider-item">
-                        <a href="#"><img src="assets/images/brand-logo/4.jpg" alt="" /></a>
-                    </div>
-                    <div class="brand-slider-item">
-                        <a href="#"><img src="assets/images/brand-logo/5.jpg" alt="" /></a>
-                    </div>
-                    <div class="brand-slider-item">
-                        <a href="#"><img src="assets/images/brand-logo/1.jpg" alt="" /></a>
-                    </div>
-                    <div class="brand-slider-item">
-                        <a href="#"><img src="assets/images/brand-logo/2.jpg" alt="" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--    <div class="brand-area">-->
+<!--        <div class="container">-->
+<!--            <div class="border-1px">-->
+<!--                <div class="brand-slider owl-carousel owl-nav-style owl-nav-style-2">-->
+<!--                    <div class="brand-slider-item">-->
+<!--                        <a href="#"><img src="assets/images/brand-logo/1.jpg" alt="" /></a>-->
+<!--                    </div>-->
+<!--                    <div class="brand-slider-item">-->
+<!--                        <a href="#"><img src="assets/images/brand-logo/2.jpg" alt="" /></a>-->
+<!--                    </div>-->
+<!--                    <div class="brand-slider-item">-->
+<!--                        <a href="#"><img src="assets/images/brand-logo/3.jpg" alt="" /></a>-->
+<!--                    </div>-->
+<!--                    <div class="brand-slider-item">-->
+<!--                        <a href="#"><img src="assets/images/brand-logo/4.jpg" alt="" /></a>-->
+<!--                    </div>-->
+<!--                    <div class="brand-slider-item">-->
+<!--                        <a href="#"><img src="assets/images/brand-logo/5.jpg" alt="" /></a>-->
+<!--                    </div>-->
+<!--                    <div class="brand-slider-item">-->
+<!--                        <a href="#"><img src="assets/images/brand-logo/1.jpg" alt="" /></a>-->
+<!--                    </div>-->
+<!--                    <div class="brand-slider-item">-->
+<!--                        <a href="#"><img src="assets/images/brand-logo/2.jpg" alt="" /></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
             <!-- Brand area End -->
     {% include "./listSubModule/modal.html" %}
 {% endblock %}
