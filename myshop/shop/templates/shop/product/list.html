@@ -59,10 +59,10 @@
           <div class="shop-top-bar">
               <!-- Left Side start -->
               <div class="shop-tab nav mb-res-sm-15">
-                  <a href="#shop-1" data-toggle="tab">
+                  <a class="active active1" href="#shop-1" data-toggle="tab">
                       <i class="fa fa-th show_grid"></i>
                   </a>
-                  <a class="active" href="#shop-2" data-toggle="tab">
+                  <a class="active2" href="#shop-2" data-toggle="tab">
                       <i class="fa fa-list-ul"></i>
                   </a>
                   <p>There Are {{products1.count}} Products.</p>
@@ -117,6 +117,30 @@
     ddd.parent().children(".compare-form").children("#submit_compaare").click()
   })
 
+  $(".active1").on('click',function(e){
+    localStorage.setItem("active", "active1");
+  })
+
+  $(".active2").on('click',function(e){
+    localStorage.setItem("active", "active2");
+  })
+
+  var activate = localStorage.getItem("active");
+  console.log("asas", activate)
+
+  if (activate == "active1") {
+    $(".active1").addClass( "active" );
+    $(".active2").removeClass( "active" );
+    $("#shop-2").removeClass( "active" );
+    $("#shop-1").addClass( "active" );
+  }else{
+    $(".active1").removeClass( "active" );
+    $(".active2").addClass( "active" );
+    $("#shop-2").addClass( "active" );
+    $("#shop-1").removeClass( "active" );
+
+  }
+
 	$(".quick-view1").on('click',function(e){
 		var ddd=$(this);
     $("#modal-description" ).empty();
@@ -124,6 +148,7 @@
     $("#form-deal").removeClass( "form-deal1" );
     var name=ddd.data('name')
 		var discount=ddd.data('discount')
+    console.log("dddss",discount)
 		var url=ddd.data('url')
     var url1=ddd.data('url1')
     var url2=ddd.data('url2')
@@ -132,9 +157,12 @@
     var amount=ddd.data('amount')
     var old_price = ddd.parent().parent().children(".product-decs").children(".pricing-meta").children().children("#old-price").text()
     var current_price=ddd.parent().parent().children(".product-decs").children(".pricing-meta").children().children("#current-price").text()
-		var description=ddd.parent().parent().children(".product-decs").children(".description-h2").children(".product-link").text()
     $( "#modal-description" ).append(ddd.parent().parent().children(".product-decs").children(".description-h2-1").children("#description").html());
     console.log("ssssssss",ddd.parent().parent().children(".product-decs").children(".description-h2").html())
+
+    var old_price1 = ddd.parent().parent().parent().parent().children(".child1").children(".child2").children(".product-decs").children(".pricing-meta").children().children("#old-price").text()
+    var current_price1=ddd.parent().parent().parent().parent().children(".child1").children(".child2").children(".product-decs").children(".pricing-meta").children().children("#current-price").text()
+    $( "#modal-description" ).append(ddd.parent().parent().parent().parent().children(".child1").children(".child2").children(".product-decs").children(".description-h2-1").children("#description").html());
 
     $("#tab-pane-img").attr("src", $(this).data('url'));
     $("#tab-pane-img-0").attr("src", $(this).data('url'));
@@ -147,19 +175,30 @@
     $("#compare_form").attr('action', 'compare/add/'+ id + '/');
     $("#form-deal").attr('action', 'cart/add/'+ id + '/');
 		$("#product-details-content-detail").text(name);
-    $("#modal-price").text(old_price);
+
+    if (old_price) {
+      $("#modal-price").text(old_price);
+    }else{
+      $("#modal-price").text(old_price1);
+    }
+
+    $("#modal_discount").text("0%");
     if (current_price) {
         $("#modal-price").addClass( "old-price" );
+        $("#modal_current-price").text(current_price);
         $("#modal_discount").text("-"+discount+"%");
-    }else{
-        $("#modal_discount").text("0%");
+    }
+
+    if (current_price1) {
+        $("#modal-price").addClass( "old-price" );
+        $("#modal_current-price").text(current_price1);
+        $("#modal_discount").text("-"+discount+"%");
     }
 
     if (amount < 1) {
         $("#form-deal").addClass( "form-deal1" );
     }
 
-    $("#modal_current-price").text(current_price);
 
 <!--		$(".modal-one").text($(this).data('like'));-->
 <!--		$(".modal-two").text($(this).data('comment'));-->

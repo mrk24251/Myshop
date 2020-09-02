@@ -2,15 +2,8 @@
 {% load i18n %}
 {% load currency %}
 
-<div id="shop-1" class="tab-pane">
+<div id="shop-1" class="tab-pane active">
     <div class="row">
-<!--      <div class="item">-->
-<!--        <a href="{{ product.get_absolute_url }}">-->
-<!--          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">-->
-<!--        </a>-->
-<!--        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>-->
-<!--        ${{ product.price }}-->
-<!--      </div>-->
         {% for product in products %}
         <div class="col-xl-3 col-md-4 col-sm-6">
             <article class="list-product">
@@ -47,7 +40,7 @@
                     </div>
                     <div class="pricing-meta">
                         <ul>
-                            <li id="old-price" class="{% if deal.discount %}old-price{% else %}price{% endif %}">{{ product.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                            <li id="old-price" class="{% if product.discount %}old-price{% else %}price{% endif %}">{{ product.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
                             {% if product.discount %}
                               <li id="current-price" class="current-price">{{ product.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
                               <li  class="discount-price">-{{product.discount}}%</li>
@@ -61,13 +54,11 @@
                       <form action="{% url "cart:cart_add" product.id %}" method="post">
                         <input name="quantity" style="display:none;" value="1">
                           {% csrf_token %}
-                          <li class="cart"><input class="cart-btn" type="submit" value="{% trans "Add to cart" %}"></li>
+                          {% if product.HotDealAmount > 0 %}
+                            <li class="cart"><input class="cart-btn" type="submit" value="{% trans "Add to cart" %}"></li>
+                          {% endif %}
                       </form>
                     {% endif %}
-
-<!--                        {% if deal.HotDealAmount > 0 %}-->
-<!--                            <li class="cart"><a class="cart-btn" href="#">{% trans "ADD TO CART" %}</a></li>-->
-<!--                        {% endif %}-->
                       <li>
                           <a href="wishlist.html"><i class="ion-android-favorite-outline"></i></a>
                       </li>

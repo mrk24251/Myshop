@@ -30,6 +30,11 @@ a {
     color:#5993bb;
 }
 
+.shop-bottom-area img {
+    height: 320px !important;
+    width:100%;
+}
+
 input[type= "submit"]{
     outline:none;
 }

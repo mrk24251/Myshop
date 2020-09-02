@@ -28,7 +28,7 @@ def product_list(request, slug=None):
     cart_product_form = CartAddProductForm()
     compare_product_form = CompareAddProductForm()
 
-    paginator = Paginator(products, 4)  # 3 posts in each page
+    paginator = Paginator(products, 16)  # 3 posts in each page
     page = request.GET.get('page')
     try:
         products = paginator.page(page)
