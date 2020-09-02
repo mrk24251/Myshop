@@ -97,6 +97,7 @@ def product_detail(request, id, slug):
         available=True,
         translations__language_code=language,
         translations__slug=slug,)
+    features = product.features
     compare_product_form = CompareAddProductForm()
     cart_product_form = CartAddProductForm()
 

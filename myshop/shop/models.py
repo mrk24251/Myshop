@@ -31,7 +31,6 @@ class Category(TranslatableModel):
         return reverse('shop:product_list_by_category',
                        args=[self.slug])
 
-
 class Product(TranslatableModel):
     translations = TranslatedFields(
         name=models.CharField(max_length=200, db_index=True),
@@ -96,3 +95,12 @@ class Product(TranslatableModel):
             return True
 
         return False
+
+class Feature(TranslatableModel):
+    translations = TranslatedFields(
+        name=models.CharField(max_length=50, db_index=True),
+        feature=models.CharField(max_length=50, db_index=True),
+    )
+    product = models.ForeignKey(Product,
+        related_name='features',
+        on_delete=models.CASCADE)

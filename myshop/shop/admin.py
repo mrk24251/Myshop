@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product
+from .models import Category, Product, Feature
 from parler.admin import TranslatableAdmin
 
 
@@ -18,3 +18,7 @@ class ProductAdmin(TranslatableAdmin):
 
     def get_prepopulated_fields(self, request, obj=None):
         return {'slug': ('name',)}
+
+@admin.register(Feature)
+class FeatureAdmin(TranslatableAdmin):
+    list_display = ['name', 'feature']
