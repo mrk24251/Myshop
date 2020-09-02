@@ -7,25 +7,48 @@ from .recommender import Recommender
 import redis
 from django.conf import settings
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
     port=settings.REDIS_PORT,
     db=settings.REDIS_DB)
 
-def product_list(request, category_slug=None):
+def product_list(request, slug=None):
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
-    if category_slug:
+    products1 = Product.objects.filter(available=True)
+    if slug:
         language = request.LANGUAGE_CODE
-        category = get_object_or_404(Category,translations__language_code=language,translations__slug=category_slug)
+        category = get_object_or_404(Category,translations__language_code=language,translations__slug=slug)
         products = products.filter(category=category)
+        products1 = products.filter(category=category)
+
+    cart_product_form = CartAddProductForm()
+    compare_product_form = CompareAddProductForm()
+
+    paginator = Paginator(products, 4)  # 3 posts in each page
+    page = request.GET.get('page')
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+    # If page is not an integer deliver the first page
+        products = paginator.page(1)
+    except EmptyPage:
+    # If page is out of range deliver last page of results
+        products = paginator.page(paginator.num_pages)
+
     return render(request,
         'shop/product/list.html',
         {'category': category,
         'categories': categories,
-        'products': products})
+        'page': page,
+        'products': products,
+        'products1': products1,
+        'cart_product_form': cart_product_form,
+        'compare_product_form': compare_product_form,
+    })
 
 def landing_page(request):
     if not request.session.has_key('currency'):

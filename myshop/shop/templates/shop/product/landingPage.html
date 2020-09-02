@@ -251,7 +251,7 @@
     {% include "./listSubModule/modal.html" %}
 {% endblock %}
 
-{% block domready %}submit_compaare
+{% block domready %}
   $(".compare_icon").on('click',function(e){
     var ddd=$(this);
     ddd.parent().children(".compare-form").children("#submit_compaare").click()
@@ -284,8 +284,8 @@
     $("#pro-3-img").attr("src", $(this).data('url2'));
     $("#tab-pane-img-3").attr("src", $(this).data('url3'));
     $("#pro-4-img").attr("src", $(this).data('url3'));
-    $("#compare_form").attr('action', 'compare/add/'+ id + '/');
-    $("#form-deal").attr('action', 'cart/add/'+ id + '/');
+    $("#compare_form").attr('action', 'list/compare/add/'+ id + '/');
+    $("#form-deal").attr('action', 'list/cart/add/'+ id + '/');
 		$("#product-details-content-detail").text(name);
     $("#modal-price").text(old_price);
     if (current_price) {

@@ -1,0 +1,15 @@
+<div class="pro-pagination-style text-center">
+    <ul>
+      {% if page.has_previous %}
+        <li>
+            <a class="prev" href="?page={{ page.previous_page_number }}"><i class="ion-ios-arrow-left"></i></a>
+        </li>
+      {% endif %}
+        <li><a class="active" href="#">{{ page.number }}</a></li>
+        {% if page.has_next %}
+          <li>
+              <a class="next" href="?page={{ page.next_page_number }}"><i class="ion-ios-arrow-right"></i></a>
+          </li>
+        {% endif %}
+    </ul>
+</div>
