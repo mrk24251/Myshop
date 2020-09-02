@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-30 17:39+0430\n"
-"PO-Revision-Date: 2020-08-30 13:10+0000\n"
+"POT-Creation-Date: 2020-09-02 14:29+0430\n"
+"PO-Revision-Date: 2020-09-02 10:05+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -53,26 +53,26 @@ msgstr ""
 
 #: myshop/settings.py:164
 msgid "English"
-msgstr ""
+msgstr "انگلیسی"
 
 #: myshop/settings.py:165
 msgid "Spanish"
-msgstr ""
+msgstr "اسپانیایی"
 
 #: myshop/settings.py:166
 msgid "Persian"
-msgstr ""
+msgstr "فارسی"
 
 #: myshop/urls.py:15
 msgid "admin/"
 msgstr ""
 
 #: myshop/urls.py:17
-msgid "cart/"
+msgid "list/cart/"
 msgstr ""
 
 #: myshop/urls.py:18
-msgid "compare/"
+msgid "list/compare/"
 msgstr ""
 
 #: myshop/urls.py:19
@@ -102,6 +102,8 @@ msgstr ""
 #: shop/templates/shop/product/detail.html:19
 #: shop/templates/shop/product/listSubModule/HotDeal.html:69
 #: shop/templates/shop/product/listSubModule/NewArrival.html:72
+#: shop/templates/shop/product/sub-product-list/tab-one.html:58
+#: shop/templates/shop/product/sub-product-list/tab-two.html:74
 msgid "Add to cart"
 msgstr ""
 
@@ -109,6 +111,8 @@ msgstr ""
 #: shop/templates/shop/product/listSubModule/HotDeal.html:83
 #: shop/templates/shop/product/listSubModule/NewArrival.html:83
 #: shop/templates/shop/product/listSubModule/modal.html:92
+#: shop/templates/shop/product/sub-product-list/tab-one.html:69
+#: shop/templates/shop/product/sub-product-list/tab-two.html:85
 msgid "Add to compare"
 msgstr "مقایسه"
 
@@ -131,8 +135,26 @@ msgstr "گروه ها"
 
 #: shop/templates/shop/product/landingPage.html:14
 #: shop/templates/shop/product/list.html:14
+#: shop/templates/shop/product/list.html:80
 msgid "All"
-msgstr ""
+msgstr "همه"
+
+#: shop/templates/shop/product/list.html:42
+msgid "Shop Page"
+msgstr "صفحه خرید"
+
+#: shop/templates/shop/product/list.html:44
+msgid "Home"
+msgstr "خانه"
+
+#: shop/templates/shop/product/list.html:45
+msgid "Shop List"
+msgstr "محصولات"
+
+#: shop/templates/shop/product/list.html:74
+#| msgid "Categories"
+msgid "Category"
+msgstr "گروه"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:10
 msgid "Hot Deals"
@@ -144,6 +166,8 @@ msgstr "پیشنهادات ویژه را به سبد هفتگی خود اضاف�
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:40
 #: shop/templates/shop/product/listSubModule/NewArrival.html:39
+#: shop/templates/shop/product/sub-product-list/tab-one.html:27
+#: shop/templates/shop/product/sub-product-list/tab-two.html:31
 msgid "New"
 msgstr "جدید"
 
@@ -153,16 +177,19 @@ msgid "ADD TO CART"
 msgstr "افزودن به سبد"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:91
+#: shop/templates/shop/product/sub-product-list/tab-two.html:62
 msgid "Availability"
 msgstr "موجودی"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:91
+#: shop/templates/shop/product/sub-product-list/tab-two.html:62
 msgid "In Stock"
 msgstr "در انبار"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:93
 #: shop/templates/shop/product/listSubModule/NewArrival.html:57
 #: shop/templates/shop/product/listSubModule/bestselling.html:50
+#: shop/templates/shop/product/sub-product-list/tab-two.html:64
 msgid "ended up"
 msgstr "اتمام موجودی"
 
@@ -208,12 +235,10 @@ msgid "Soft Sponge Cake"
 msgstr "کیک نرم اسفنجی"
 
 #: shop/templates/shop/product/listSubModule/bestselling.html:10
-#| msgid "Products"
 msgid "Popular Products"
 msgstr "محبوب ترین کالا ها"
 
 #: shop/templates/shop/product/listSubModule/bestselling.html:11
-#| msgid "Add hot products to weekly line up"
 msgid "Add popular products to weekly line up"
 msgstr "محبوب ترین کالاها  را به سبد هفتگی خود اضافه کن"
 

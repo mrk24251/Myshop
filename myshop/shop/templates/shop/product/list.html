@@ -39,10 +39,10 @@
     <div class="row">
       <div class="col-md-12">
           <div class="breadcrumb-content">
-              <h1 class="breadcrumb-hrading">Shop Page</h1>
+              <h1 class="breadcrumb-hrading">{% trans "Shop Page" %}</h1>
               <ul class="breadcrumb-links">
-                  <li><a href="{% url "shop:landing_page" %}">Home</a></li>
-                  <li>Shop List</li>
+                  <li><a href="{% url "shop:landing_page" %}">{% trans "Home" %}</a></li>
+                  <li>{% trans "Shop List" %}</li>
               </ul>
           </div>
       </div>
@@ -71,7 +71,7 @@
               <!-- Right Side Start -->
               <div class="select-shoing-wrap">
                   <div class="shot-product">
-                      <p>Category:</p>
+                      <p>{% trans "Category" %}:</p>
                   </div>
                   <div class="shop-select">
                       <select onchange="location = this.value;">
