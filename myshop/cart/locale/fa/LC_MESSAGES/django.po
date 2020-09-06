@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-06 22:27+0430\n"
+"POT-Creation-Date: 2020-09-06 22:46+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,66 +18,78 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: cart/forms.py:11 cart/templates/cart/detail.html:16
+#: cart/forms.py:11 cart/templates/cart/detail.html:208
 msgid "Quantity"
 msgstr ""
 
-#: cart/templates/cart/detail.html:6 cart/templates/cart/detail.html:10
+#: cart/templates/cart/detail.html:6 cart/templates/cart/detail.html:202
 msgid "Your shopping cart"
 msgstr ""
 
-#: cart/templates/cart/detail.html:14
+#: cart/templates/cart/detail.html:20
+msgid "Cart Page"
+msgstr ""
+
+#: cart/templates/cart/detail.html:22
+msgid "Home"
+msgstr ""
+
+#: cart/templates/cart/detail.html:23
+msgid "Cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:206
 msgid "Image"
 msgstr ""
 
-#: cart/templates/cart/detail.html:15
+#: cart/templates/cart/detail.html:207
 msgid "Product"
 msgstr ""
 
-#: cart/templates/cart/detail.html:17 cart/templates/cart/detail.html:40
+#: cart/templates/cart/detail.html:209 cart/templates/cart/detail.html:232
 msgid "Remove"
 msgstr ""
 
-#: cart/templates/cart/detail.html:18
+#: cart/templates/cart/detail.html:210
 msgid "Unit price"
 msgstr ""
 
-#: cart/templates/cart/detail.html:19
+#: cart/templates/cart/detail.html:211
 msgid "Price"
 msgstr ""
 
-#: cart/templates/cart/detail.html:48
+#: cart/templates/cart/detail.html:240
 msgid "Subtotal"
 msgstr ""
 
-#: cart/templates/cart/detail.html:53
+#: cart/templates/cart/detail.html:245
 #, python-format
 msgid ""
-"\n"
-"              <td>\"%(code)s\" coupon (%(discount)s%% off)</td>\n"
-"          "
+"-->\n"
+"<!--              <td>\"%(code)s\" coupon (%(discount)s%% off)</td>-->\n"
+"<!--          "
 msgstr ""
 
-#: cart/templates/cart/detail.html:63
+#: cart/templates/cart/detail.html:255
 msgid "Total"
 msgstr ""
 
-#: cart/templates/cart/detail.html:74
+#: cart/templates/cart/detail.html:266
 msgid "People who bought this also bought"
 msgstr ""
 
-#: cart/templates/cart/detail.html:86
+#: cart/templates/cart/detail.html:278
 msgid "Apply a coupon"
 msgstr ""
 
-#: cart/templates/cart/detail.html:89
+#: cart/templates/cart/detail.html:281
 msgid "Apply"
 msgstr ""
 
-#: cart/templates/cart/detail.html:93
+#: cart/templates/cart/detail.html:285
 msgid "Continue shopping"
 msgstr ""
 
-#: cart/templates/cart/detail.html:95
+#: cart/templates/cart/detail.html:287
 msgid "Checkout"
 msgstr ""

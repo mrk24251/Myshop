@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-06 22:27+0430\n"
+"POT-Creation-Date: 2020-09-06 22:46+0430\n"
 "PO-Revision-Date: 2020-09-06 18:02+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,7 +123,6 @@ msgid "Home"
 msgstr "خانه"
 
 #: shop/templates/shop/product/detail.html:48
-#| msgid "Products"
 msgid "Single Product"
 msgstr "کالا"
 
@@ -141,6 +140,11 @@ msgstr "اتمام موجودی"
 #: shop/templates/shop/product/listSubModule/modal.html:78
 msgid "+ Add to cart"
 msgstr " افزودن به سبد +"
+
+#: shop/templates/shop/product/detail.html:133
+#: shop/templates/shop/product/listSubModule/modal.html:84
+msgid "Add to wishlist"
+msgstr "افزودن به علاقه مندی ها"
 
 #: shop/templates/shop/product/detail.html:141
 #: shop/templates/shop/product/listSubModule/HotDeal.html:83
@@ -312,10 +316,6 @@ msgstr "پشتیبانی 24 ساعته"
 msgid "Contact us 24 hours a day"
 msgstr "در 24 ساعت شبانه روز با ما تماس بگیرید"
 
-#: shop/templates/shop/product/listSubModule/modal.html:84
-msgid "Add to wishlist"
-msgstr "افزودن به علاقه مندی ها"
-
 #: shop/templates/shop/product/listSubModule/modal.html:96
 msgid "Share"
 msgstr "اشتراک گذاری"
@@ -343,7 +343,6 @@ msgid "Description"
 msgstr "توضیحات"
 
 #: shop/templates/shop/product/sub-product-detail/description-review.html:11
-#| msgid "Products"
 msgid "Product Details"
 msgstr "جزییات محصول"
 

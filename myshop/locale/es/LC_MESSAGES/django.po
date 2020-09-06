@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-06 22:27+0430\n"
+"POT-Creation-Date: 2020-09-06 22:46+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -136,6 +136,11 @@ msgstr ""
 #: shop/templates/shop/product/detail.html:125
 #: shop/templates/shop/product/listSubModule/modal.html:78
 msgid "+ Add to cart"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:133
+#: shop/templates/shop/product/listSubModule/modal.html:84
+msgid "Add to wishlist"
 msgstr ""
 
 #: shop/templates/shop/product/detail.html:141
@@ -306,10 +311,6 @@ msgstr ""
 
 #: shop/templates/shop/product/listSubModule/feature.html:46
 msgid "Contact us 24 hours a day"
-msgstr ""
-
-#: shop/templates/shop/product/listSubModule/modal.html:84
-msgid "Add to wishlist"
 msgstr ""
 
 #: shop/templates/shop/product/listSubModule/modal.html:96
