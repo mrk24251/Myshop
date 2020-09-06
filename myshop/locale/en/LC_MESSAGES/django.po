@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 14:29+0430\n"
+"POT-Creation-Date: 2020-09-06 22:27+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,25 +96,69 @@ msgstr ""
 msgid "My shop"
 msgstr ""
 
-#: shop/templates/shop/product/detail.html:19
+#: shop/templates/shop/product/detail.html:20
 #: shop/templates/shop/product/listSubModule/HotDeal.html:69
 #: shop/templates/shop/product/listSubModule/NewArrival.html:72
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:69
+#: shop/templates/shop/product/sub-product-detail/same-category.html:68
 #: shop/templates/shop/product/sub-product-list/tab-one.html:58
 #: shop/templates/shop/product/sub-product-list/tab-two.html:74
 msgid "Add to cart"
 msgstr ""
 
-#: shop/templates/shop/product/detail.html:25
+#: shop/templates/shop/product/detail.html:26
+msgid "People who bought this also bought"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:45
+msgid "Single Product Page"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:47
+#: shop/templates/shop/product/list.html:44
+msgid "Home"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:48
+msgid "Single Product"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:98
+#: shop/templates/shop/product/listSubModule/HotDeal.html:93
+#: shop/templates/shop/product/listSubModule/NewArrival.html:57
+#: shop/templates/shop/product/listSubModule/bestselling.html:50
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:54
+#: shop/templates/shop/product/sub-product-detail/same-category.html:53
+#: shop/templates/shop/product/sub-product-list/tab-two.html:64
+msgid "ended up"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:125
+#: shop/templates/shop/product/listSubModule/modal.html:78
+msgid "+ Add to cart"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:141
 #: shop/templates/shop/product/listSubModule/HotDeal.html:83
 #: shop/templates/shop/product/listSubModule/NewArrival.html:83
 #: shop/templates/shop/product/listSubModule/modal.html:92
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:80
+#: shop/templates/shop/product/sub-product-detail/same-category.html:79
 #: shop/templates/shop/product/sub-product-list/tab-one.html:69
 #: shop/templates/shop/product/sub-product-list/tab-two.html:85
 msgid "Add to compare"
 msgstr ""
 
-#: shop/templates/shop/product/detail.html:31
-msgid "People who bought this also bought"
+#: shop/templates/shop/product/detail.html:146
+msgid "ReassuranceSecurity Policy (Edit With Customer Reassurance Module)"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:147
+msgid "Delivery Policy (Edit With Customer Reassurance Module)"
+msgstr ""
+
+#: shop/templates/shop/product/detail.html:148
+msgid "Return Policy (Edit With Customer Reassurance Module)"
 msgstr ""
 
 #: shop/templates/shop/product/landingPage.html:6
@@ -140,10 +184,6 @@ msgstr ""
 msgid "Shop Page"
 msgstr ""
 
-#: shop/templates/shop/product/list.html:44
-msgid "Home"
-msgstr ""
-
 #: shop/templates/shop/product/list.html:45
 msgid "Shop List"
 msgstr ""
@@ -162,6 +202,8 @@ msgstr ""
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:40
 #: shop/templates/shop/product/listSubModule/NewArrival.html:39
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:37
+#: shop/templates/shop/product/sub-product-detail/same-category.html:36
 #: shop/templates/shop/product/sub-product-list/tab-one.html:27
 #: shop/templates/shop/product/sub-product-list/tab-two.html:31
 msgid "New"
@@ -169,6 +211,8 @@ msgstr ""
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:74
 #: shop/templates/shop/product/listSubModule/NewArrival.html:73
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:70
+#: shop/templates/shop/product/sub-product-detail/same-category.html:69
 msgid "ADD TO CART"
 msgstr ""
 
@@ -180,13 +224,6 @@ msgstr ""
 #: shop/templates/shop/product/listSubModule/HotDeal.html:91
 #: shop/templates/shop/product/sub-product-list/tab-two.html:62
 msgid "In Stock"
-msgstr ""
-
-#: shop/templates/shop/product/listSubModule/HotDeal.html:93
-#: shop/templates/shop/product/listSubModule/NewArrival.html:57
-#: shop/templates/shop/product/listSubModule/bestselling.html:50
-#: shop/templates/shop/product/sub-product-list/tab-two.html:64
-msgid "ended up"
 msgstr ""
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:96
@@ -271,10 +308,6 @@ msgstr ""
 msgid "Contact us 24 hours a day"
 msgstr ""
 
-#: shop/templates/shop/product/listSubModule/modal.html:78
-msgid "+ Add to cart"
-msgstr ""
-
 #: shop/templates/shop/product/listSubModule/modal.html:84
 msgid "Add to wishlist"
 msgstr ""
@@ -289,4 +322,24 @@ msgstr ""
 
 #: shop/templates/shop/product/listSubModule/popularCategories.html:52
 msgid "Shop Now"
+msgstr ""
+
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:14
+msgid "You Might Also Like"
+msgstr ""
+
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:15
+msgid "Add Related products to weekly line up"
+msgstr ""
+
+#: shop/templates/shop/product/sub-product-detail/description-review.html:10
+msgid "Description"
+msgstr ""
+
+#: shop/templates/shop/product/sub-product-detail/description-review.html:11
+msgid "Product Details"
+msgstr ""
+
+#: shop/templates/shop/product/sub-product-detail/same-category.html:13
+msgid "In The Same Category"
 msgstr ""

@@ -13,6 +13,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 import weasyprint
 import redis
+from shop.recommender import Recommender
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -21,6 +22,7 @@ r = redis.StrictRedis(host=settings.REDIS_HOST,
 
 def order_create(request):
     cart = Cart(request)
+    rr = Recommender()
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
         if form.is_valid():
@@ -30,8 +32,9 @@ def order_create(request):
                 order.coupon = cart.coupon
                 order.discount = cart.coupon.discount
             order.save()
-
+            recommending= []
             for item in cart:
+                recommending.append(Product.objects.get(id=item['product'].id))
                 category_id=item['product'].category.id
                 r.zincrby('category',
                           1,category_id)
@@ -50,6 +53,7 @@ def order_create(request):
                 # pp.HotDealAmount = F('HotDealAmount') - item['quantity']
                 # pp.save()
 
+            rr.products_bought(recommending)
             # clear the cart
             cart.clear()
             # launch asynchronous task

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 14:29+0430\n"
-"PO-Revision-Date: 2020-09-02 10:05+0000\n"
+"POT-Creation-Date: 2020-09-06 22:27+0430\n"
+"PO-Revision-Date: 2020-09-06 18:02+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -99,26 +99,71 @@ msgstr ""
 msgid "My shop"
 msgstr ""
 
-#: shop/templates/shop/product/detail.html:19
+#: shop/templates/shop/product/detail.html:20
 #: shop/templates/shop/product/listSubModule/HotDeal.html:69
 #: shop/templates/shop/product/listSubModule/NewArrival.html:72
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:69
+#: shop/templates/shop/product/sub-product-detail/same-category.html:68
 #: shop/templates/shop/product/sub-product-list/tab-one.html:58
 #: shop/templates/shop/product/sub-product-list/tab-two.html:74
 msgid "Add to cart"
 msgstr ""
 
-#: shop/templates/shop/product/detail.html:25
+#: shop/templates/shop/product/detail.html:26
+msgid "People who bought this also bought"
+msgstr "خریداران این محصول محصولات زیر را هم خریده اند"
+
+#: shop/templates/shop/product/detail.html:45
+msgid "Single Product Page"
+msgstr "صفحه کالا"
+
+#: shop/templates/shop/product/detail.html:47
+#: shop/templates/shop/product/list.html:44
+msgid "Home"
+msgstr "خانه"
+
+#: shop/templates/shop/product/detail.html:48
+#| msgid "Products"
+msgid "Single Product"
+msgstr "کالا"
+
+#: shop/templates/shop/product/detail.html:98
+#: shop/templates/shop/product/listSubModule/HotDeal.html:93
+#: shop/templates/shop/product/listSubModule/NewArrival.html:57
+#: shop/templates/shop/product/listSubModule/bestselling.html:50
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:54
+#: shop/templates/shop/product/sub-product-detail/same-category.html:53
+#: shop/templates/shop/product/sub-product-list/tab-two.html:64
+msgid "ended up"
+msgstr "اتمام موجودی"
+
+#: shop/templates/shop/product/detail.html:125
+#: shop/templates/shop/product/listSubModule/modal.html:78
+msgid "+ Add to cart"
+msgstr " افزودن به سبد +"
+
+#: shop/templates/shop/product/detail.html:141
 #: shop/templates/shop/product/listSubModule/HotDeal.html:83
 #: shop/templates/shop/product/listSubModule/NewArrival.html:83
 #: shop/templates/shop/product/listSubModule/modal.html:92
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:80
+#: shop/templates/shop/product/sub-product-detail/same-category.html:79
 #: shop/templates/shop/product/sub-product-list/tab-one.html:69
 #: shop/templates/shop/product/sub-product-list/tab-two.html:85
 msgid "Add to compare"
 msgstr "مقایسه"
 
-#: shop/templates/shop/product/detail.html:31
-msgid "People who bought this also bought"
-msgstr ""
+#: shop/templates/shop/product/detail.html:146
+msgid "ReassuranceSecurity Policy (Edit With Customer Reassurance Module)"
+msgstr "امنیت ارسال کالا"
+
+#: shop/templates/shop/product/detail.html:147
+msgid "Delivery Policy (Edit With Customer Reassurance Module)"
+msgstr " تحویل به موقع کالا"
+
+#: shop/templates/shop/product/detail.html:148
+msgid "Return Policy (Edit With Customer Reassurance Module)"
+msgstr "امکان  بازگشت کالا"
 
 #: shop/templates/shop/product/landingPage.html:6
 #: shop/templates/shop/product/landingPage.html:24
@@ -143,16 +188,11 @@ msgstr "همه"
 msgid "Shop Page"
 msgstr "صفحه خرید"
 
-#: shop/templates/shop/product/list.html:44
-msgid "Home"
-msgstr "خانه"
-
 #: shop/templates/shop/product/list.html:45
 msgid "Shop List"
 msgstr "محصولات"
 
 #: shop/templates/shop/product/list.html:74
-#| msgid "Categories"
 msgid "Category"
 msgstr "گروه"
 
@@ -166,6 +206,8 @@ msgstr "پیشنهادات ویژه را به سبد هفتگی خود اضاف�
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:40
 #: shop/templates/shop/product/listSubModule/NewArrival.html:39
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:37
+#: shop/templates/shop/product/sub-product-detail/same-category.html:36
 #: shop/templates/shop/product/sub-product-list/tab-one.html:27
 #: shop/templates/shop/product/sub-product-list/tab-two.html:31
 msgid "New"
@@ -173,6 +215,8 @@ msgstr "جدید"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:74
 #: shop/templates/shop/product/listSubModule/NewArrival.html:73
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:70
+#: shop/templates/shop/product/sub-product-detail/same-category.html:69
 msgid "ADD TO CART"
 msgstr "افزودن به سبد"
 
@@ -185,13 +229,6 @@ msgstr "موجودی"
 #: shop/templates/shop/product/sub-product-list/tab-two.html:62
 msgid "In Stock"
 msgstr "در انبار"
-
-#: shop/templates/shop/product/listSubModule/HotDeal.html:93
-#: shop/templates/shop/product/listSubModule/NewArrival.html:57
-#: shop/templates/shop/product/listSubModule/bestselling.html:50
-#: shop/templates/shop/product/sub-product-list/tab-two.html:64
-msgid "ended up"
-msgstr "اتمام موجودی"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:96
 msgid "Hurry Up! Offers ends in"
@@ -275,10 +312,6 @@ msgstr "پشتیبانی 24 ساعته"
 msgid "Contact us 24 hours a day"
 msgstr "در 24 ساعت شبانه روز با ما تماس بگیرید"
 
-#: shop/templates/shop/product/listSubModule/modal.html:78
-msgid "+ Add to cart"
-msgstr " افزودن به سبد +"
-
 #: shop/templates/shop/product/listSubModule/modal.html:84
 msgid "Add to wishlist"
 msgstr "افزودن به علاقه مندی ها"
@@ -294,3 +327,26 @@ msgstr "محبوب ترین گروه ها"
 #: shop/templates/shop/product/listSubModule/popularCategories.html:52
 msgid "Shop Now"
 msgstr "خرید"
+
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:14
+msgid "You Might Also Like"
+msgstr "احتمالا دوست خواهید داشت"
+
+#: shop/templates/shop/product/sub-product-detail/also-liked.html:15
+#, fuzzy
+#| msgid "Add hot products to weekly line up"
+msgid "Add Related products to weekly line up"
+msgstr "پیشنهادات ویژه را به سبد هفتگی خود اضافه کن"
+
+#: shop/templates/shop/product/sub-product-detail/description-review.html:10
+msgid "Description"
+msgstr "توضیحات"
+
+#: shop/templates/shop/product/sub-product-detail/description-review.html:11
+#| msgid "Products"
+msgid "Product Details"
+msgstr "جزییات محصول"
+
+#: shop/templates/shop/product/sub-product-detail/same-category.html:13
+msgid "In The Same Category"
+msgstr "هم گروهی ها"

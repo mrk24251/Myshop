@@ -1,10 +1,14 @@
+{% load i18n %}
+{% load static %}
+{% load currency %}
+
 <!-- product details description area start -->
 <div class="description-review-area mb-60px">
     <div class="container">
         <div class="description-review-wrapper">
             <div class="description-review-topbar nav">
-                <a data-toggle="tab" href="#des-details1">Description</a>
-                <a class="active" data-toggle="tab" href="#des-details2">Product Details</a>
+                <a data-toggle="tab" href="#des-details1">{% trans "Description" %}</a>
+                <a class="active" data-toggle="tab" href="#des-details2">{% trans "Product Details" %}</a>
             </div>
             <div class="tab-content description-review-bottom">
                 <div id="des-details2" class="tab-pane active">

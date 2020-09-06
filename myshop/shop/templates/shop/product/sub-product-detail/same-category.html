@@ -1,0 +1,92 @@
+{% load i18n %}
+{% load static %}
+{% load currency %}
+
+<!-- Recent Add Product Area Start -->
+<section class="recent-add-area mt-30 mb-30px">
+    <div class="container">
+      {% if same_category %}
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Section Title -->
+                <div class="section-title">
+                    <h2>{% trans "In The Same Category" %}</h2>
+                    <p>{{same_category.all.count}} other products in the same category:</p>
+                </div>
+                <!-- Section Title -->
+            </div>
+        </div>
+        <!-- Recent Product slider Start -->
+        <div class="recent-product-slider owl-carousel owl-nav-style">
+            {% for product in same_category %}
+                <article class="list-product list-product1">
+                      <div class="img-block">
+                          <a href="{{ product.get_absolute_url }}" class="thumbnail">
+                              <img class="first-img" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="" />
+                              <img class="second-img" src="{% if product.image2 %}{{ product.image2.url }}{% endif %}" alt="" />
+                          </a>
+                          <div class="quick-view">
+                              <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+                                  <i class="ion-ios-search-strong"></i>
+                              </a>
+                          </div>
+                      </div>
+                      {% if product.is_new %}
+                          <ul class="product-flag">
+                              <li  class="new">{% trans "New" %}</li>
+                          </ul>
+                      {% endif %}
+                      <div class="product-decs">
+                          <a class="inner-link" href="{{ product.get_absolute_url }}"><span>{{product.name}}</span></a>
+                          <h2><a href="{{ product.get_absolute_url }}" class="product-link">{{ product.description|truncatechars:20 }}</a></h2>
+                          <div class="rating-product">
+                              <i class="ion-android-star"></i>
+                              <i class="ion-android-star"></i>
+                              <i class="ion-android-star"></i>
+                              <i class="ion-android-star"></i>
+                              <i class="ion-android-star"></i>
+                          </div>
+                          <div class="pricing-meta">
+                            <ul>
+                                <li id="old-price" class="{% if product.discount %}old-price{% else %} price{% endif %}">{{ product.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                                {% if product.HotDealAmount < 1 %}
+                                    <li class="discount-price">{% trans "ended up" %}</li>
+                                {% endif %}
+                                {% if product.discount %}
+                                  <li id="current-price" class="current-price">{{ product.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
+                                  <li class="discount-price">-{{product.discount}}%</li>
+                                {% endif %}
+                            </ul>
+                          </div>
+                      </div>
+                      <div class="add-to-link">
+                        <ul>
+                          {% if product.HotDealAmount > 0 %}
+                            <form action="{% url "cart:cart_add" product.id %}" method="post">
+                              <input name="quantity" style="display:none;" value="1">
+                                {% csrf_token %}
+                                <li class="cart"><input class="cart-btn" type="submit" value="{% trans "Add to cart" %}"></li>
+        <!--                          <li class="cart"><a type="submit" class="cart-btn" href="#">{% trans "ADD TO CART" %}</a></li>-->
+                            </form>
+                          {% endif %}
+                            <li>
+                                <a href="#"><i class="ion-android-favorite-outline"></i></a>
+                            </li>
+                            <li>
+                              <form class="compare-form" action="{% url "compare:compare_add" product.id %}" method="post">
+                                  {{ compare_product_form }}
+                                  {% csrf_token %}
+                                  <input id="submit_compaare" type="submit" style="display:none;" value="{% trans "Add to compare" %}">
+                              </form>
+                              <span class="compare_icon"><i class="ion-ios-shuffle-strong"></i></span>
+                            </li>
+                        </ul>
+                      </div>
+                  </article>
+            {% endfor %}
+        </div>
+      {% endif %}
+        <!-- Recent product slider end -->
+    </div>
+</section>
+<!-- Recent product area end -->

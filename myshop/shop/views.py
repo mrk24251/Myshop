@@ -97,9 +97,13 @@ def product_detail(request, id, slug):
         available=True,
         translations__language_code=language,
         translations__slug=slug,)
-    features = product.features
+
+    products = Product.objects.filter(available=True)
+    category_id = product.category.id
+    category = get_object_or_404(Category, id=category_id)
+    same_category = products.filter(category=category).exclude(id=id)
+
     compare_product_form = CompareAddProductForm()
-    cart_product_form = CartAddProductForm()
 
     r = Recommender()
     recommended_products = r.suggest_products_for([product], 4)
@@ -108,7 +112,9 @@ def product_detail(request, id, slug):
         'shop/product/detail.html',
         {'product': product,
          'compare_product_form': compare_product_form,
-         'recommended_products': recommended_products})
+         'recommended_products': recommended_products,
+         'same_category': same_category,
+         })
 
 def selectcurrency(request):
 

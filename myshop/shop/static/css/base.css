@@ -35,6 +35,10 @@ a {
     width:100%;
 }
 
+.list-product1 {
+    height: 380px !important;
+}
+
 .pro-details-list {
     margin-bottom: 0px !important;
 }
