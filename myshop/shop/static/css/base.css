@@ -35,6 +35,14 @@ a {
     width:100%;
 }
 
+.pro-details-list {
+    margin-bottom: 0px !important;
+}
+
+.pro-details-quality {
+    margin-bottom: 0px !important;
+}
+
 input[type= "submit"]{
     outline:none;
 }

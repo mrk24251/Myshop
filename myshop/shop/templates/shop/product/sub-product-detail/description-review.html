@@ -1,0 +1,28 @@
+<!-- product details description area start -->
+<div class="description-review-area mb-60px">
+    <div class="container">
+        <div class="description-review-wrapper">
+            <div class="description-review-topbar nav">
+                <a data-toggle="tab" href="#des-details1">Description</a>
+                <a class="active" data-toggle="tab" href="#des-details2">Product Details</a>
+            </div>
+            <div class="tab-content description-review-bottom">
+                <div id="des-details2" class="tab-pane active">
+                    <div class="product-anotherinfo-wrapper">
+                        <ul>
+                            {% for feature in product.features.all %}
+                                <li><span>{{feature.name}}</span> {{feature.feature}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div id="des-details1" class="tab-pane">
+                    <div class="product-description-wrapper">
+                        <p>{{product.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- product details description area end -->
