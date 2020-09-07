@@ -62,7 +62,7 @@ class Cart(object):
         for item in cart.values():
             item['discount'] = Decimal(item['discount'])
             item['price'] = Decimal(item['price'])
-            item['total_price'] = item['price'] * item['quantity']
+            item['total_price'] = item['price'] * item['quantity'] * (100 - item['discount']) / 100
             item['total_price_after_discount']= item['price'] *(100-item['discount'])/100
             yield item
 
@@ -70,7 +70,7 @@ class Cart(object):
         return sum(item['quantity'] for item in self.cart.values())
 
     def get_total_price(self):
-        return sum(Decimal(item['total_price_after_discount']) * item['quantity'] for item in
+        return sum(Decimal(item['total_price_after_discount'])* item['quantity'] for item in
                    self.cart.values())
 
     def clear(self):

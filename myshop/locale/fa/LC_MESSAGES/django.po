@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-06 22:46+0430\n"
-"PO-Revision-Date: 2020-09-06 18:02+0000\n"
+"POT-Creation-Date: 2020-09-07 19:29+0430\n"
+"PO-Revision-Date: 2020-09-07 15:04+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,13 +19,104 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
+#: cart/forms.py:11
+msgid "Quantity"
+msgstr "تعداد"
+
+#: cart/templates/cart/detail.html:7
+msgid "Your shopping cart"
+msgstr "سبد خرید شما"
+
+#: cart/templates/cart/detail.html:20
+msgid "Cart Page"
+msgstr "صفحه سبد خرید"
+
+#: cart/templates/cart/detail.html:22
+#: shop/templates/shop/product/detail.html:47
+#: shop/templates/shop/product/list.html:44
+msgid "Home"
+msgstr "خانه"
+
+#: cart/templates/cart/detail.html:23
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: cart/templates/cart/detail.html:34
+msgid "Your cart items"
+msgstr "اقلام سبد خرید شما"
+
+#: cart/templates/cart/detail.html:41 compare/templates/compare/detail.html:14
+msgid "Image"
+msgstr "تصویر"
+
+#: cart/templates/cart/detail.html:42
+msgid "Product Name"
+msgstr "اسم کالا"
+
+#: cart/templates/cart/detail.html:43
+msgid "Until Price"
+msgstr "قیمت هر واحد"
+
+#: cart/templates/cart/detail.html:44
+msgid "Qty"
+msgstr "تعداد"
+
+#: cart/templates/cart/detail.html:45
+msgid "Subtotal"
+msgstr "جمع کل"
+
+#: cart/templates/cart/detail.html:46
+msgid "Action"
+msgstr "حذف و به روزرسانی"
+
+#: cart/templates/cart/detail.html:87
+msgid "Continue Shopping"
+msgstr "ادامه خرید"
+
+#: cart/templates/cart/detail.html:90
+msgid "Clear Shopping Cart"
+msgstr "پاک کردن صفحه خرید"
+
+#: cart/templates/cart/detail.html:100
+msgid "Use Coupon Code"
+msgstr "استفاده از کد تخفیف"
+
+#: cart/templates/cart/detail.html:103
+msgid "Enter your coupon code if you have one."
+msgstr "در صورت داشتن کد تخفیف ، کد تخفیف خود را وارد کنید"
+
+#: cart/templates/cart/detail.html:107
+msgid "Apply"
+msgstr "اعمال کردن"
+
+#: cart/templates/cart/detail.html:108
+msgid "Apply Coupon"
+msgstr "اعمال کردن کد تخفیف"
+
+#: cart/templates/cart/detail.html:117
+#| msgid "Cart Page"
+msgid "Cart Total"
+msgstr "مجموع قابل پرداخت"
+
+#: cart/templates/cart/detail.html:119
+msgid "Total products"
+msgstr "مجموع  قیمت کالا ها"
+
+#: cart/templates/cart/detail.html:122
+#, python-format
+msgid ""
+"\n"
+"                                            <td>\"%(code)s\" coupon (%(discount)s%% off)</td>\n"
+"                                        "
+msgstr ""
+
+#: cart/templates/cart/detail.html:125
+msgid "Proceed to Checkout"
+msgstr "ادامه دادن برای بازبینی نهایی"
+
 #: compare/templates/compare/detail.html:6
 #: compare/templates/compare/detail.html:10
 msgid "Your shopping compare"
-msgstr ""
-
-#: compare/templates/compare/detail.html:14
-msgid "Image"
 msgstr ""
 
 #: compare/templates/compare/detail.html:15
@@ -37,19 +128,19 @@ msgstr "کالا ها"
 #: compare/templates/compare/detail.html:16
 #: compare/templates/compare/detail.html:30
 msgid "Remove"
-msgstr ""
+msgstr "حذف"
 
 #: compare/templates/compare/detail.html:17
 msgid "Price"
-msgstr ""
+msgstr "قیمت"
 
 #: compare/templates/compare/detail.html:40
 msgid "Continue shopping"
-msgstr ""
+msgstr "ادامه خرید"
 
 #: compare/templates/compare/detail.html:42
 msgid "Checkout"
-msgstr ""
+msgstr "بازبینی"
 
 #: myshop/settings.py:164
 msgid "English"
@@ -107,7 +198,7 @@ msgstr ""
 #: shop/templates/shop/product/sub-product-list/tab-one.html:58
 #: shop/templates/shop/product/sub-product-list/tab-two.html:74
 msgid "Add to cart"
-msgstr ""
+msgstr "افزودن به سبد"
 
 #: shop/templates/shop/product/detail.html:26
 msgid "People who bought this also bought"
@@ -116,11 +207,6 @@ msgstr "خریداران این محصول محصولات زیر را هم خر�
 #: shop/templates/shop/product/detail.html:45
 msgid "Single Product Page"
 msgstr "صفحه کالا"
-
-#: shop/templates/shop/product/detail.html:47
-#: shop/templates/shop/product/list.html:44
-msgid "Home"
-msgstr "خانه"
 
 #: shop/templates/shop/product/detail.html:48
 msgid "Single Product"
@@ -222,7 +308,7 @@ msgstr "جدید"
 #: shop/templates/shop/product/sub-product-detail/also-liked.html:70
 #: shop/templates/shop/product/sub-product-detail/same-category.html:69
 msgid "ADD TO CART"
-msgstr "افزودن به سبد"
+msgstr "افزودن به  سبد"
 
 #: shop/templates/shop/product/listSubModule/HotDeal.html:91
 #: shop/templates/shop/product/sub-product-list/tab-two.html:62

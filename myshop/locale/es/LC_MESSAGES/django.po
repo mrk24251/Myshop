@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-06 22:46+0430\n"
+"POT-Creation-Date: 2020-09-07 19:29+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: cart/forms.py:11
+msgid "Quantity"
+msgstr ""
+
+#: cart/templates/cart/detail.html:7
+msgid "Your shopping cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:20
+msgid "Cart Page"
+msgstr ""
+
+#: cart/templates/cart/detail.html:22
+#: shop/templates/shop/product/detail.html:47
+#: shop/templates/shop/product/list.html:44
+msgid "Home"
+msgstr ""
+
+#: cart/templates/cart/detail.html:23
+msgid "Cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:34
+msgid "Your cart items"
+msgstr ""
+
+#: cart/templates/cart/detail.html:41 compare/templates/compare/detail.html:14
+msgid "Image"
+msgstr ""
+
+#: cart/templates/cart/detail.html:42
+msgid "Product Name"
+msgstr ""
+
+#: cart/templates/cart/detail.html:43
+msgid "Until Price"
+msgstr ""
+
+#: cart/templates/cart/detail.html:44
+msgid "Qty"
+msgstr ""
+
+#: cart/templates/cart/detail.html:45
+msgid "Subtotal"
+msgstr ""
+
+#: cart/templates/cart/detail.html:46
+msgid "Action"
+msgstr ""
+
+#: cart/templates/cart/detail.html:87
+msgid "Continue Shopping"
+msgstr ""
+
+#: cart/templates/cart/detail.html:90
+msgid "Clear Shopping Cart"
+msgstr ""
+
+#: cart/templates/cart/detail.html:100
+msgid "Use Coupon Code"
+msgstr ""
+
+#: cart/templates/cart/detail.html:103
+msgid "Enter your coupon code if you have one."
+msgstr ""
+
+#: cart/templates/cart/detail.html:107
+msgid "Apply"
+msgstr ""
+
+#: cart/templates/cart/detail.html:108
+msgid "Apply Coupon"
+msgstr ""
+
+#: cart/templates/cart/detail.html:117
+msgid "Cart Total"
+msgstr ""
+
+#: cart/templates/cart/detail.html:119
+msgid "Total products"
+msgstr ""
+
+#: cart/templates/cart/detail.html:122
+#, python-format
+msgid ""
+"\n"
+"                                            <td>\"%(code)s\" coupon "
+"(%(discount)s%% off)</td>\n"
+"                                        "
+msgstr ""
+
+#: cart/templates/cart/detail.html:125
+msgid "Proceed to Checkout"
+msgstr ""
+
 #: compare/templates/compare/detail.html:6
 #: compare/templates/compare/detail.html:10
 msgid "Your shopping compare"
-msgstr ""
-
-#: compare/templates/compare/detail.html:14
-msgid "Image"
 msgstr ""
 
 #: compare/templates/compare/detail.html:15
@@ -112,11 +203,6 @@ msgstr ""
 
 #: shop/templates/shop/product/detail.html:45
 msgid "Single Product Page"
-msgstr ""
-
-#: shop/templates/shop/product/detail.html:47
-#: shop/templates/shop/product/list.html:44
-msgid "Home"
 msgstr ""
 
 #: shop/templates/shop/product/detail.html:48
