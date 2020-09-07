@@ -111,6 +111,14 @@ a.button.light {
 .text-right {
     text-align:right;
 }
+.cart_quantity{
+    display: -webkit-inline-box;
+}
+.cart_img{
+    width: 150px;
+    height: 110px;
+    margin-left: 20px;
+}
 td input[type="submit"] {
     font-size:12px;
     padding:4px 10px;
