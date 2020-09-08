@@ -114,6 +114,15 @@ a.button.light {
 .cart_quantity{
     display: -webkit-inline-box;
 }
+.compare-table .table tbody tr td.product-image-title .image img {
+    height: 260px;
+}
+#hot_deal_image{
+    height:430px !important;
+}
+#compare_add_to_cart{
+    padding-bottom: 33px;
+}
 .cart_img{
     width: 150px;
     height: 110px;

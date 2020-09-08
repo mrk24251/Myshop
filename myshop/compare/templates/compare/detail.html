@@ -1,45 +1,175 @@
 {% extends "shop/base.html" %}
 {% load static %}
 {% load i18n %}
+{% load currency %}
 
 {% block title %}
   {% trans "Your shopping compare" %}
 {% endblock %}
 
 {% block content %}
-  <h1>{% trans "Your shopping compare" %}</h1>
-  <table class="cart">
-    <thead>
-      <tr>
-        <th>{% trans "Image" %}</th>
-        <th>{% trans "Product" %}</th>
-        <th>{% trans "Remove" %}</th>
-        <th>{% trans "Price" %}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in compare %}
-        {% with product=item.product %}
-          <tr>
-            <td>
-              <a href="{{ product.get_absolute_url }}">
-                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
-              </a>
-            </td>
-            <td>{{ product.name }}</td>
-            <td><a href="{% url "compare:compare_remove" product.id %}">{% trans "Remove" %}</a></td>
-            <td class="num">${{ item.price }}</td>
-            <td class="num">${{ item.total_price }}</td>
-          </tr>
-        {% endwith %}
-      {% endfor %}
-    </tbody>
-  </table>
 
-  <p class="text-right">
-    <a href="{% url "shop:product_list" %}" class="button light">{% trans "Continue shopping" %}</a>
-    <a href="{% url "orders:order_create" %}" class="button">
-      {% trans "Checkout" %}
-    </a>
-  </p>
+<div id="main">
+    <!-- Compare area start -->
+    <div class="compare-area mtb-60px">
+        <div class="container">
+            <div class="row">
+                <ul class="col-12">
+                        <!-- Compare Table -->
+                        <div class="compare-table table-responsive">
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td class="first-column">{% trans "Product" %}</td>
+                                        {% for item in compare %}
+                                            {% with product=item.product %}
+                                                <td class="product-image-title">
+                                                    <a href="{{ product.get_absolute_url }}" class="image"><img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" alt="Compare Product" /></a>
+                                                    <a href="{{ product.get_absolute_url }}" class="category">{{ product.category.name }}</a>
+                                                    <a href="{{ product.get_absolute_url }}" class="title">{{ product.name }}</a>
+                                                </td>
+                                            {% endwith %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column">{% trans "Description" %}</td>
+                                        {% for item in compare %}
+                                            {% with product=item.product %}
+                                                <td class="pro-desc">
+                                                    <p>{{product.description|linebreaks}}</p>
+                                                </td>
+                                            {% endwith %}
+                                        {% endfor %}
+                                    </tr>
+                                    <tr>
+                                        <td class="first-column">{% trans "Price" %}</td>
+                                        {% for item in compare %}
+                                            {% with product=item.product %}
+                                                <td class="pro-price">
+                                                  <ul>
+                                                    <li id="old-price" class="{% if product.discount %}old-price{% else %}price{% endif %}">{{ product.price|currency:request.session.currency }}&nbsp;{{request.session.currency}}</li>
+                                                    {% if product.discount %}
+                                                      <li id="current-price" class="current-price">{{ product.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</li>
+                                                      <li  class="discount-price">-{{product.discount}}%</li></ul>
+                                                    {% endif %}
+                                                </td>
+                                            {% endwith %}
+                                        {% endfor %}
+                                    </tr>
+<!--                                    <tr>-->
+<!--                                        <td class="first-column">Color</td>-->
+<!--                                        <td class="pro-color">Black</td>-->
+<!--                                        <td class="pro-color">Black</td>-->
+<!--                                        <td class="pro-color">Black</td>-->
+<!--                                    </tr>-->
+                                    <tr>
+                                        <td class="first-column">{% trans "Stock" %}</td>
+                                        {% for item in compare %}
+                                            {% with product=item.product %}
+                                                {% if product.HotDealAmount > 0 %}
+                                                    <td class="pro-stock">{% trans "In Stock" %}</td>
+                                                {% else %}
+                                                    <td><div class="discount-price">{% trans "ended up" %}</div></td>
+                                                {% endif %}
+                                            {% endwith %}
+                                        {% endfor %}
+                                    </tr>
+
+                                    <tr>
+                                        <td class="first-column">{% trans "Add to cart" %}</td>
+                                        {% for item in compare %}
+                                            {% with product=item.product %}
+                                                <td class="pro-addtocart">
+                                                  <ul>
+                                                    {% if product.HotDealAmount > 0 %}
+                                                      <form action="{% url "cart:cart_add" product.id %}" method="post">
+                                                        <input name="quantity" style="display:none;" value="1">
+                                                        {% csrf_token %}
+
+                                                        <input  id="compare_add_to_cart" class="cart-btn add-to-cart" type="submit" value="{% trans "Add to cart" %}">
+                                <!--                          <li class="cart"><a type="submit" class="cart-btn" href="#">{% trans "ADD TO CART" %}</a></li>-->
+                                                      </form>
+                                                    {% else %}
+                                                        <span>{% trans "ended up" %}</span>
+                                                    {% endif %}
+                                                  </ul>
+                                                </td>
+                                            {% endwith %}
+                                        {% endfor %}
+                                    </tr>
+
+                                    <tr>
+                                        <td class="first-column">{% trans "Delete" %}</td>
+                                          {% for item in compare %}
+                                            {% with product=item.product %}
+                                              <td class="pro-remove">
+                                                <a href="{% url "compare:compare_remove" product.id %}"><i class="ion-trash-b"></i></a>
+                                              </td>
+                                            {% endwith %}
+                                          {% endfor %}
+                                    </tr>
+
+                                    <tr>
+                                        <td class="first-column">{% trans "Rating" %}</td>
+                                        {% for item in compare %}
+                                          {% with product=item.product %}
+                                              <td class="pro-ratting">
+                                                  <i class="ion-android-star"></i>
+                                                  <i class="ion-android-star"></i>
+                                                  <i class="ion-android-star"></i>
+                                                  <i class="ion-android-star"></i>
+                                                  <i class="ion-android-star"></i>
+                                              </td>
+                                          {% endwith %}
+                                        {% endfor %}
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Compare area end -->
+</div>
+
+<!--  <h1>{% trans "Your shopping compare" %}</h1>-->
+<!--  <table class="cart">-->
+<!--    <thead>-->
+<!--      <tr>-->
+<!--        <th>{% trans "Image" %}</th>-->
+<!--        <th>{% trans "Product" %}</th>-->
+<!--        <th>{% trans "Remove" %}</th>-->
+<!--        <th>{% trans "Price" %}</th>-->
+<!--      </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--      {% for item in compare %}-->
+<!--        {% with product=item.product %}-->
+<!--          <tr>-->
+<!--            <td>-->
+<!--              <a href="{{ product.get_absolute_url }}">-->
+<!--                <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">-->
+<!--              </a>-->
+<!--            </td>-->
+<!--            <td>{{ product.name }}</td>-->
+<!--            <td><a href="{% url "compare:compare_remove" product.id %}">{% trans "Remove" %}</a></td>-->
+<!--            <td class="num">${{ item.price }}</td>-->
+<!--            <td class="num">${{ item.total_price }}</td>-->
+<!--          </tr>-->
+<!--        {% endwith %}-->
+<!--      {% endfor %}-->
+<!--    </tbody>-->
+<!--  </table>-->
+
+<!--  <p class="text-right">-->
+<!--    <a href="{% url "shop:product_list" %}" class="button light">{% trans "Continue shopping" %}</a>-->
+<!--    <a href="{% url "orders:order_create" %}" class="button">-->
+<!--      {% trans "Checkout" %}-->
+<!--    </a>-->
+<!--  </p>-->
+{% endblock %}
+
+{% block domready %}
 {% endblock %}
