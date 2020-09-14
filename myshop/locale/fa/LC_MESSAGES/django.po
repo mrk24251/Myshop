@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 11:11+0430\n"
-"PO-Revision-Date: 2020-09-08 06:47+0000\n"
+"POT-Creation-Date: 2020-09-15 01:02+0430\n"
+"PO-Revision-Date: 2020-09-14 20:34+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -31,7 +31,8 @@ msgstr "سبد خرید شما"
 msgid "Cart Page"
 msgstr "صفحه سبد خرید"
 
-#: cart/templates/cart/detail.html:22
+#: cart/templates/cart/detail.html:22 compare/templates/compare/detail.html:21
+#: orders/templates/orders/order/create.html:19
 #: shop/templates/shop/product/detail.html:47
 #: shop/templates/shop/product/list.html:44
 msgid "Home"
@@ -46,7 +47,6 @@ msgid "Your cart items"
 msgstr "اقلام سبد خرید شما"
 
 #: cart/templates/cart/detail.html:41
-#: compare/templates/compare/detail.html:141
 msgid "Image"
 msgstr "تصویر"
 
@@ -110,44 +110,48 @@ msgid ""
 "                                        "
 msgstr ""
 
-#: cart/templates/cart/detail.html:125
+#: cart/templates/cart/detail.html:126
 msgid "Proceed to Checkout"
 msgstr "ادامه دادن برای بازبینی نهایی"
 
 #: compare/templates/compare/detail.html:7
-#: compare/templates/compare/detail.html:137
 msgid "Your shopping compare"
 msgstr "جدول مقایسه ای شما"
 
-#: compare/templates/compare/detail.html:23
-#: compare/templates/compare/detail.html:142
-#| msgid "Products"
+#: compare/templates/compare/detail.html:19
+msgid "Compare Page"
+msgstr "صفحه مقایسه"
+
+#: compare/templates/compare/detail.html:22
+msgid "Compare"
+msgstr "مقایسه"
+
+#: compare/templates/compare/detail.html:40
+#: orders/templates/orders/order/create.html:118
 msgid "Product"
 msgstr "کالا"
 
-#: compare/templates/compare/detail.html:35
+#: compare/templates/compare/detail.html:52
 #: shop/templates/shop/product/sub-product-detail/description-review.html:10
 msgid "Description"
 msgstr "توضیحات"
 
-#: compare/templates/compare/detail.html:45
-#: compare/templates/compare/detail.html:144
+#: compare/templates/compare/detail.html:62
 msgid "Price"
 msgstr "قیمت"
 
-#: compare/templates/compare/detail.html:66
-#| msgid "In Stock"
+#: compare/templates/compare/detail.html:83
 msgid "Stock"
 msgstr "موجودی"
 
-#: compare/templates/compare/detail.html:70
+#: compare/templates/compare/detail.html:87
 #: shop/templates/shop/product/listSubModule/HotDeal.html:91
 #: shop/templates/shop/product/sub-product-list/tab-two.html:62
 msgid "In Stock"
 msgstr "موجود"
 
-#: compare/templates/compare/detail.html:72
-#: compare/templates/compare/detail.html:93
+#: compare/templates/compare/detail.html:89
+#: compare/templates/compare/detail.html:110
 #: shop/templates/shop/product/detail.html:98
 #: shop/templates/shop/product/listSubModule/HotDeal.html:93
 #: shop/templates/shop/product/listSubModule/NewArrival.html:57
@@ -158,8 +162,8 @@ msgstr "موجود"
 msgid "ended up"
 msgstr "اتمام موجودی"
 
-#: compare/templates/compare/detail.html:79
-#: compare/templates/compare/detail.html:89
+#: compare/templates/compare/detail.html:96
+#: compare/templates/compare/detail.html:106
 #: shop/templates/shop/product/detail.html:20
 #: shop/templates/shop/product/listSubModule/HotDeal.html:69
 #: shop/templates/shop/product/listSubModule/NewArrival.html:72
@@ -170,7 +174,7 @@ msgstr "اتمام موجودی"
 msgid "Add to cart"
 msgstr "افزودن به سبد"
 
-#: compare/templates/compare/detail.html:90
+#: compare/templates/compare/detail.html:107
 #: shop/templates/shop/product/listSubModule/HotDeal.html:74
 #: shop/templates/shop/product/listSubModule/NewArrival.html:73
 #: shop/templates/shop/product/sub-product-detail/also-liked.html:70
@@ -178,26 +182,13 @@ msgstr "افزودن به سبد"
 msgid "ADD TO CART"
 msgstr "افزودن به  سبد"
 
-#: compare/templates/compare/detail.html:102
+#: compare/templates/compare/detail.html:119
 msgid "Delete"
 msgstr "حذف"
 
-#: compare/templates/compare/detail.html:113
+#: compare/templates/compare/detail.html:130
 msgid "Rating"
 msgstr "امتیاز"
-
-#: compare/templates/compare/detail.html:143
-#: compare/templates/compare/detail.html:157
-msgid "Remove"
-msgstr "حذف"
-
-#: compare/templates/compare/detail.html:167
-msgid "Continue shopping"
-msgstr "ادامه خرید"
-
-#: compare/templates/compare/detail.html:169
-msgid "Checkout"
-msgstr "بازبینی"
 
 #: myshop/settings.py:164
 msgid "English"
@@ -229,6 +220,125 @@ msgstr ""
 
 #: myshop/urls.py:21
 msgid "coupons/"
+msgstr ""
+
+#: orders/models.py:11
+msgid "first name"
+msgstr "نام"
+
+#: orders/models.py:13
+msgid "last name"
+msgstr "نام خانوادگی"
+
+#: orders/models.py:15
+msgid "e-mail"
+msgstr "ایمیل"
+
+#: orders/models.py:16
+msgid ""
+"Phone number must be entered in the format: '+999999999'. Up to 15 digits "
+"allowed."
+msgstr ""
+"شماره وارد شده باید به صورت 09177458956 باشد و حداکثر تعداد مجاز 15 رقم است."
+
+#: orders/models.py:17
+msgid "phone_number"
+msgstr "شماره تلفن"
+
+#: orders/models.py:18
+msgid "address"
+msgstr "نشانی"
+
+#: orders/models.py:19
+msgid "postal code"
+msgstr "کد پستی"
+
+#: orders/models.py:20 orders/models.py:21
+msgid "city"
+msgstr "شهر"
+
+#: orders/templates/orders/order/create.html:6
+#: orders/templates/orders/order/create.html:20
+msgid "Checkout"
+msgstr "بازبینی"
+
+#: orders/templates/orders/order/create.html:17
+#| msgid "Checkout"
+msgid "Checkout Page"
+msgstr "صفحه بازبینی"
+
+#: orders/templates/orders/order/create.html:40
+#: orders/templates/orders/order/create.html:156
+msgid "Place order"
+msgstr "ارسال سفارش "
+
+#: orders/templates/orders/order/create.html:46
+msgid "Billing Details"
+msgstr "جزییات پرداختی"
+
+#: orders/templates/orders/order/create.html:50
+msgid "First Name"
+msgstr "نام"
+
+#: orders/templates/orders/order/create.html:56
+msgid "Last Name"
+msgstr "نام خانوادگی"
+
+#: orders/templates/orders/order/create.html:62
+msgid "Country"
+msgstr "کشور"
+
+#: orders/templates/orders/order/create.html:68
+msgid "Town / City"
+msgstr "شهر / روستا"
+
+#: orders/templates/orders/order/create.html:74
+msgid "Street Address"
+msgstr "نشانی"
+
+#: orders/templates/orders/order/create.html:92
+msgid "Postcode / ZIP"
+msgstr "کد پستی"
+
+#: orders/templates/orders/order/create.html:98
+msgid "Phone"
+msgstr "شماره تلفن"
+
+#: orders/templates/orders/order/create.html:104
+msgid "Email Address"
+msgstr "ایمیل"
+
+#: orders/templates/orders/order/create.html:113
+msgid "Your order"
+msgstr "سفارش شما"
+
+#: orders/templates/orders/order/create.html:119
+#: orders/templates/orders/order/create.html:148
+msgid "Total"
+msgstr "مجموع قابل پرداخت"
+
+#: orders/templates/orders/order/create.html:134
+#| msgid "Apply Coupon"
+msgid "Coupon"
+msgstr "کد تخفیف"
+
+#: orders/templates/orders/order/created.html:5
+#: orders/templates/orders/order/created.html:9
+msgid "Thank you"
+msgstr "متشکریم"
+
+#: orders/templates/orders/order/created.html:10
+#, python-format
+msgid ""
+"\n"
+"    <p>Your order has been successfully completed. Your order number is <strong>%(order_id)s</strong>.</p>\n"
+"  "
+msgstr ""
+"\n"
+"سفارش شما به صورت موفقیت آمیز کامل شد. کد پیگیری سفارش شما %(order_id)s می باشد"
+
+#: orders/urls.py:8
+msgid "create/"
 msgstr ""
 
 #: payment/urls.py:8
@@ -456,3 +566,9 @@ msgstr "جزییات محصول"
 #: shop/templates/shop/product/sub-product-detail/same-category.html:13
 msgid "In The Same Category"
 msgstr "هم گروهی ها"
+
+#~ msgid "Remove"
+#~ msgstr "حذف"
+
+#~ msgid "Continue shopping"
+#~ msgstr "ادامه خرید"

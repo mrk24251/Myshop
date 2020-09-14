@@ -4,6 +4,7 @@ from decimal import Decimal
 from django.core.validators import MinValueValidator,MaxValueValidator
 from coupons.models import Coupon
 from django.utils.translation import gettext_lazy as _
+from django.core.validators import RegexValidator
 
 class Order(models.Model):
 
@@ -12,9 +13,12 @@ class Order(models.Model):
     last_name = models.CharField(_('last name'),
                                  max_length=50)
     email = models.EmailField(_('e-mail'))
+    phone_regex = RegexValidator(regex=r'^\+?0?\d{9,15}$', message=_("Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."))
+    phone_number = models.CharField(_('phone_number'),validators=[phone_regex], max_length=15, blank=False,default=999999999) # validators should be a list
     address = models.CharField(_('address'),max_length=250)
     postal_code = models.CharField(_('postal code'),max_length=20)
     city = models.CharField(_('city'),max_length=100)
+    country = models.CharField(_('city'), max_length=100,default = "iran")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)

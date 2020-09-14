@@ -123,6 +123,27 @@ a.button.light {
 #compare_add_to_cart{
     padding-bottom: 33px;
 }
+.your-order-area .Place-order>input {
+    background-color: #4fb68b;
+    color: #fff;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 18px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 50px;
+    z-index: 9;
+    width: -webkit-fill-available;
+    outline: none;
+    border: none;
+}
+.your-order-area .Place-order>input:hover {
+    background: #253237;
+    color: #fff;
+}
+
 .cart_img{
     width: 150px;
     height: 110px;
