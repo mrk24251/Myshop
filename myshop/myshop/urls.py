@@ -18,6 +18,7 @@ urlpatterns += i18n_patterns(
     path(_('list/compare/'), include('compare.urls', namespace='compare')),
     path(_('orders/'), include('orders.urls', namespace='orders')),
     path(_(('payment/')), include('payment.urls', namespace='payment')),
+    path(_(('subscribtion/')), include('email_subscription.urls', namespace='subscription')),
     path(_('coupons/'), include('coupons.urls', namespace='coupons')),
     path('', include('shop.urls', namespace='shop')),
 )

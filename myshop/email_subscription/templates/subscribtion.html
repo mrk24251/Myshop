@@ -1,0 +1,20 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load currency %}
+
+{% block title %}subscription{% endblock %}
+
+{% block content %}
+
+<div class="search_page" style="margin:100px;">
+  <div class="row">{{subscription_form.errors.email}}</div>
+  <div class="row">
+    <form action="." method="post">
+      <input name="email">
+      {% csrf_token %}
+      <input type="submit" value="subscribe">
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-15 01:02+0430\n"
+"POT-Creation-Date: 2020-09-17 13:09+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: cart/templates/cart/detail.html:23
+#: cart/templates/cart/detail.html:23 shop/templates/shop/base.html:561
 msgid "Cart"
 msgstr ""
 
@@ -122,12 +122,12 @@ msgstr ""
 msgid "Compare Page"
 msgstr ""
 
-#: compare/templates/compare/detail.html:22
+#: compare/templates/compare/detail.html:22 shop/templates/shop/base.html:562
 msgid "Compare"
 msgstr ""
 
 #: compare/templates/compare/detail.html:40
-#: orders/templates/orders/order/create.html:118
+#: orders/templates/orders/order/create.html:119
 msgid "Product"
 msgstr ""
 
@@ -190,15 +190,15 @@ msgstr ""
 msgid "Rating"
 msgstr ""
 
-#: myshop/settings.py:164
+#: myshop/settings.py:165
 msgid "English"
 msgstr ""
 
-#: myshop/settings.py:165
+#: myshop/settings.py:166
 msgid "Spanish"
 msgstr ""
 
-#: myshop/settings.py:166
+#: myshop/settings.py:167
 msgid "Persian"
 msgstr ""
 
@@ -218,7 +218,7 @@ msgstr ""
 msgid "orders/"
 msgstr ""
 
-#: myshop/urls.py:21
+#: myshop/urls.py:22
 msgid "coupons/"
 msgstr ""
 
@@ -265,57 +265,57 @@ msgstr ""
 msgid "Checkout Page"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:40
-#: orders/templates/orders/order/create.html:156
+#: orders/templates/orders/order/create.html:41
+#: orders/templates/orders/order/create.html:157
 msgid "Place order"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:46
+#: orders/templates/orders/order/create.html:47
 msgid "Billing Details"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:50
+#: orders/templates/orders/order/create.html:51
 msgid "First Name"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:56
+#: orders/templates/orders/order/create.html:57
 msgid "Last Name"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:62
+#: orders/templates/orders/order/create.html:63
 msgid "Country"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:68
+#: orders/templates/orders/order/create.html:69
 msgid "Town / City"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:74
+#: orders/templates/orders/order/create.html:75
 msgid "Street Address"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:92
+#: orders/templates/orders/order/create.html:93
 msgid "Postcode / ZIP"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:98
+#: orders/templates/orders/order/create.html:99
 msgid "Phone"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:104
+#: orders/templates/orders/order/create.html:105
 msgid "Email Address"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:113
+#: orders/templates/orders/order/create.html:114
 msgid "Your order"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:119
-#: orders/templates/orders/order/create.html:148
+#: orders/templates/orders/order/create.html:120
+#: orders/templates/orders/order/create.html:149
 msgid "Total"
 msgstr ""
 
-#: orders/templates/orders/order/create.html:134
+#: orders/templates/orders/order/create.html:135
 msgid "Coupon"
 msgstr ""
 
@@ -351,6 +351,54 @@ msgstr ""
 
 #: shop/templates/shop/base.html:11
 msgid "My shop"
+msgstr ""
+
+#: shop/templates/shop/base.html:541
+msgid "We are new shop with diffrent strategy in selling"
+msgstr ""
+
+#: shop/templates/shop/base.html:544
+msgid "NEED HELP?"
+msgstr ""
+
+#: shop/templates/shop/base.html:556
+msgid "Custom Links"
+msgstr ""
+
+#: shop/templates/shop/base.html:559
+msgid "main page"
+msgstr ""
+
+#: shop/templates/shop/base.html:560
+msgid "product list"
+msgstr ""
+
+#: shop/templates/shop/base.html:570
+msgid "Newsletter"
+msgstr ""
+
+#: shop/templates/shop/base.html:572
+msgid "Enter email to subscribe Newsletter ."
+msgstr ""
+
+#: shop/templates/shop/base.html:576
+msgid "Enter your email here.."
+msgstr ""
+
+#: shop/templates/shop/base.html:578
+msgid "Subscribe"
+msgstr ""
+
+#: shop/templates/shop/base.html:625
+msgid "You subscribed at Newsletter"
+msgstr ""
+
+#: shop/templates/shop/base.html:628
+msgid "This email existed,before"
+msgstr ""
+
+#: shop/templates/shop/base.html:630
+msgid "Please enter your email correctly"
 msgstr ""
 
 #: shop/templates/shop/product/detail.html:26
