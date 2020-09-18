@@ -8,7 +8,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>{% block title %}{% trans "My shop" %}{% endblock %}</title>
+  <title>{% block title %}{% trans "Erfan Geram" %}{% endblock %}</title>
   <link href="{% static "css/base.css" %}" rel="stylesheet">
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon/favicon.png" />
@@ -24,19 +24,6 @@
 
 <body>
 
-<form id="currency_switcher" method="POST" action="{% url "selectcurrency" %}">{% csrf_token %}
-<select name="currency" onchange="submit()">
-  {% for curr in CURRENCIES %}
-  <option value="{{ curr.code }}" {% ifequal curr.code request.session.currency %}selected="selected"{% endifequal %}>
-    {{ curr.dbol }} {{ curr.name }}
-  </option>
-  {% endfor %}
-</select>
-<noscript>
-  <input type="submit" value="Set" />
-</noscript>
-</form>
-<span>ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</span>
 <div id="main">
   <header class="main-header home-2">
     <!-- Header top Area Start  -->
@@ -55,37 +42,38 @@
             <div class="header-right-nav">
               <ul class="res-xs-flex">
                 <li class="after-n">
-                  <a href="compare.html"><i class="ion-ios-shuffle-strong"></i>Compare (0)</a>
-                </li>
-                <li>
-                  <a href="wishlist.html"><i class="ion-android-favorite-outline"></i>Wishlist (0)</a>
+                  <a href="{% url "compare:compare_detail" %}"><i class="ion-ios-shuffle-strong"></i>Compare (0)</a>
                 </li>
               </ul>
               <div class="dropdown-navs">
                 <ul>
-                  <!-- Settings Start  -->
-                  <li class="dropdown">
-                    <a class="angle-icon" href="#">Settings</a>
-                    <ul class="dropdown-nav">
-                      <li><a href="my-account.html">My Account</a></li>
-                      <li><a href="checkout.html">Checkout</a></li>
-                      <li><a href="login.html">Login</a></li>
-                    </ul>
-                  </li>
-                  <!-- Settings end  -->
                   <!-- Currency Start -->
                   <li class="top-10px first-child">
-                    <select>
-                      <option value="1">USD $</option>
-                      <option value="2">EUR €</option>
-                    </select>
+                    <form id="currency_switcher" method="POST" action="{% url "selectcurrency" %}">{% csrf_token %}
+                      <select name="currency" onchange="submit()">
+                        {% for curr in CURRENCIES %}
+                        <option value="{{ curr.code }}" {% ifequal curr.code request.session.currency %}selected="selected"{% endifequal %}>
+                          {{ curr.dbol }} {{ curr.name }}
+                        </option>
+                        {% endfor %}
+                      </select>
+                      <noscript>
+                        <input type="submit" value="Set" />
+                      </noscript>
+                    </form>
                   </li>
                   <!-- Currency End -->
                   <!-- Language Start -->
                   <li class="top-10px mr-15px">
-                    <select>
-                      <option value="1">English</option>
-                      <option value="2">France</option>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    <select onchange="location = this.value;">
+                      {% for language in languages %}
+                        <option value="/{{ language.code }}/" {% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                          {{ language.name_local }}
+                        </option>
+                      {% endfor %}
                     </select>
                   </li>
                   <!-- Language End -->
@@ -98,6 +86,7 @@
       </div>
     </div>
     <!-- Header top Area end  -->
+
     <!-- Header Navigation Area Start  -->
     <div class="header-navigation sticky-nav">
       <div class="container-fluid">
@@ -538,7 +527,7 @@
             </div>
             <!-- footer logo -->
             <div class="about-footer">
-              <p class="text-info">{% trans "We are new shop with diffrent strategy in selling" %}/p>
+              <p class="text-info">{% trans "We are new shop with diffrent strategy in selling" %}</p>
               <div class="need-help">
                 <p class="phone-info">
                   {% trans "NEED HELP?" %}

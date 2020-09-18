@@ -14,6 +14,7 @@ from django.template.loader import render_to_string
 import weasyprint
 import redis
 from shop.recommender import Recommender
+from decimal import Decimal
 
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
@@ -31,9 +32,11 @@ def order_create(request):
             if cart.coupon:
                 order.coupon = cart.coupon
                 order.discount = cart.coupon.discount
+
             order.save()
             recommending= []
             for item in cart:
+                price_after_discount = item['total_price_after_discount']
                 recommending.append(Product.objects.get(id=item['product'].id))
                 category_id=item['product'].category.id
                 r.zincrby('category',
@@ -46,7 +49,7 @@ def order_create(request):
 
                 OrderItem.objects.create(order=order,
                     product=item['product'],
-                    price=item['price'],
+                    price=price_after_discount,
                     quantity=item['quantity'])
 
                 # pp=item['product']
@@ -61,7 +64,10 @@ def order_create(request):
             # set the order in the session
             request.session['order_id'] = order.id
             # redirect for payment
-            return redirect(reverse('payment:process'))
+            if request.session['currency'] == "IRR":
+                return redirect(reverse('payment:request'))
+            else:
+                return redirect(reverse('payment:process'))
 
     else:
         form = OrderCreateForm()

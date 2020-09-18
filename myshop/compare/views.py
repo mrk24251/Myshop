@@ -24,4 +24,5 @@ def compare_remove(request, product_id):
 
 def compare_detail(request):
     compare = Compare(request)
-    return render(request, 'compare/detail.html', {'compare': compare})
+    len = compare.__len__
+    return render(request, 'compare/detail.html', {'compare': compare,'len': len})

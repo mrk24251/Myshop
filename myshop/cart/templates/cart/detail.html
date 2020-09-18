@@ -116,12 +116,12 @@
                                 <div class="title-wrap">
                                     <h4 class="cart-bottom-title section-bg-gary-cart">{% trans "Cart Total" %}</h4>
                                 </div>
-                                <h5>{% trans "Total products" %} <span>{{ cart.get_total_price|floatformat:"2"|currency:request.session.currency }} &nbsp;{{request.session.currency}}</span></h5>
+                                <h5>{% trans "Total products" %} <span>{{ cart.get_total_price|currency:request.session.currency }} &nbsp;{{request.session.currency}}</span></h5>
                                 {% if cart.coupon %}
                                     <h4 class="grand-totall-title">
                                         {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
                                             <td>"{{ code }}" coupon ({{ discount }}% off)</td>
-                                        {% endblocktrans %} <span>{{ cart.get_total_price_after_discount|floatformat:"2"|currency:request.session.currency }} &nbsp;{{request.session.currency}}</span></h4>
+                                        {% endblocktrans %} <span>{{ cart.get_total_price_after_discount|currency:request.session.currency }} &nbsp;{{request.session.currency}}</span></h4>
                                 {% endif %}
                                 <a href="{% url "orders:order_create" %}">{% trans "Proceed to Checkout" %}</a>
                             </div>
