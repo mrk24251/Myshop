@@ -14,13 +14,16 @@
     font-family: Nastaliq;
     src: url(../font/IranNastaliq.ttf);
 }
-#logo{
-    color:#4fb68d !important;
-}
-#logo:hover{
+#logo2{
     color:#000 !important;
 }
+#logo2:hover{
+    color:#4fb68d !important;
+}
 
+.count-cart:after {
+    content: none !important;
+}
 body { 
     margin:0;
     padding:0;

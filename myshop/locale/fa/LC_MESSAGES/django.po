@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 13:09+0430\n"
-"PO-Revision-Date: 2020-09-17 08:42+0000\n"
+"POT-Creation-Date: 2020-09-19 09:35+0430\n"
+"PO-Revision-Date: 2020-09-19 05:07+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -38,7 +38,8 @@ msgstr "صفحه سبد خرید"
 msgid "Home"
 msgstr "خانه"
 
-#: cart/templates/cart/detail.html:23 shop/templates/shop/base.html:561
+#: cart/templates/cart/detail.html:23 shop/templates/shop/base.html:111
+#: shop/templates/shop/base.html:149 shop/templates/shop/base.html:197
 msgid "Cart"
 msgstr "سبد خرید"
 
@@ -122,7 +123,9 @@ msgstr "جدول مقایسه ای شما"
 msgid "Compare Page"
 msgstr "صفحه مقایسه"
 
-#: compare/templates/compare/detail.html:22 shop/templates/shop/base.html:562
+#: compare/templates/compare/detail.html:22 shop/templates/shop/base.html:45
+#: shop/templates/shop/base.html:112 shop/templates/shop/base.html:150
+#: shop/templates/shop/base.html:198
 msgid "Compare"
 msgstr "مقایسه"
 
@@ -339,68 +342,81 @@ msgstr ""
 msgid "create/"
 msgstr ""
 
-#: payment/urls.py:8
+#: payment/urls.py:9
 msgid "process/"
 msgstr ""
 
-#: payment/urls.py:9
+#: payment/urls.py:10
 msgid "done/"
 msgstr ""
 
-#: payment/urls.py:10
+#: payment/urls.py:11
 msgid "canceled/"
 msgstr ""
 
 #: shop/templates/shop/base.html:11
-msgid "My shop"
+msgid "Erfan Geram"
 msgstr "عرفان گرام"
 
-#: shop/templates/shop/base.html:541
-msgid "We are new shop with diffrent strategy in selling"
-msgstr "ما فروشگاه جدید با ایده های بزرگ هستیم"
+#: shop/templates/shop/base.html:36
+msgid "Welcome you to ErfanGeram store!"
+msgstr "به فروشگاه عرفان گرام خوش آمدید"
 
-#: shop/templates/shop/base.html:544
-msgid "NEED HELP?"
-msgstr "کمک نمیخوای؟"
+#: shop/templates/shop/base.html:107 shop/templates/shop/base.html:145
+msgid "Pages "
+msgstr "صفحات"
 
-#: shop/templates/shop/base.html:556
-msgid "Custom Links"
-msgstr "لینک های پرکاربرد"
-
-#: shop/templates/shop/base.html:559
+#: shop/templates/shop/base.html:109 shop/templates/shop/base.html:147
+#: shop/templates/shop/base.html:195
 msgid "main page"
 msgstr "صفحه اصلی"
 
-#: shop/templates/shop/base.html:560
-#| msgid "Products"
+#: shop/templates/shop/base.html:110 shop/templates/shop/base.html:148
+#: shop/templates/shop/base.html:196
 msgid "product list"
 msgstr "لیست کالاها"
 
-#: shop/templates/shop/base.html:570
+#: shop/templates/shop/base.html:123
+msgid "Call us "
+msgstr "با ما تماس بگیرید"
+
+#: shop/templates/shop/base.html:177
+msgid "We are new shop with diffrent strategy in selling"
+msgstr "ما فروشگاه جدید با ایده های بزرگ هستیم"
+
+#: shop/templates/shop/base.html:180
+msgid "NEED HELP?"
+msgstr "کمک نمیخوای؟"
+
+#: shop/templates/shop/base.html:192
+msgid "Custom Links"
+msgstr "لینک های پرکاربرد"
+
+#: shop/templates/shop/base.html:206
 msgid "Newsletter"
 msgstr "خبرنامه"
 
-#: shop/templates/shop/base.html:572
+#: shop/templates/shop/base.html:208
 msgid "Enter email to subscribe Newsletter ."
 msgstr "ایمیل خود را وارد کنید تا در خبرنامه عضو شوید"
 
-#: shop/templates/shop/base.html:576
+#: shop/templates/shop/base.html:212
 msgid "Enter your email here.."
 msgstr "ایمیل خود را وارد کنید"
 
-#: shop/templates/shop/base.html:578
+#: shop/templates/shop/base.html:214
 msgid "Subscribe"
 msgstr "عضویت"
 
-#: shop/templates/shop/base.html:625
+#: shop/templates/shop/base.html:261
 msgid "You subscribed at Newsletter"
 msgstr "شما به عضویت خبرنامه درآمدید."
 
-#: shop/templates/shop/base.html:628
+#: shop/templates/shop/base.html:264
 msgid "This email existed,before"
 msgstr "شما پیش از این عضو خبرنامه شده اید"
 
-#: shop/templates/shop/base.html:630
+#: shop/templates/shop/base.html:266
 msgid "Please enter your email correctly"
 msgstr "ایمیل وارد شده صحیح نمی باشد.."
 
@@ -613,6 +629,9 @@ msgstr "جزییات محصول"
 #: shop/templates/shop/product/sub-product-detail/same-category.html:13
 msgid "In The Same Category"
 msgstr "هم گروهی ها"
+
+#~ msgid "My shop"
+#~ msgstr "عرفان گرام"
 
 #~ msgid "Remove"
 #~ msgstr "حذف"
