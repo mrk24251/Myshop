@@ -19,7 +19,7 @@ from decimal import Decimal
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
     port=settings.REDIS_PORT,
-    db=settings.REDIS_DB)
+    password=settings.REDIS_PASSWORD)
 
 def order_create(request):
     cart = Cart(request)

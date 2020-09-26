@@ -27,7 +27,7 @@ SECRET_KEY = 'w*e--!t%eo9&!v($oi#2x3gq6j^j=b6=e(wo$u26z@j+=u454u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
@@ -50,11 +51,14 @@ INSTALLED_APPS = [
     'parler',
     'localflavor',
     'currencies',
+    'django.contrib.postgres',
+    'cloudinary',
 ]
 
 
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -65,13 +69,15 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 OPENEXCHANGERATES_APP_ID = "c2b2efcb306e075d9c2f2d0b614119ea"
 
 ROOT_URLCONF = 'myshop.urls'
 
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6379
-REDIS_DB = 1
+REDIS_HOST = 'ec2-54-91-25-109.compute-1.amazonaws.com'
+REDIS_PORT =  14729
+REDIS_PASSWORD = 'p3f99a910cb8689f6f5622ec24a4303af307bed1c187ca0512f0b9bd87803bdec'
+REDIS_USER = 'h'
 
 TEMPLATES = [
     {
@@ -98,8 +104,12 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd1pd57lt7pjsk2',
+        'USER': 'nurdfswwxralys',
+        'PASSWORD': 'c6d206e10ed078492b380606c619aa19da8a4d085e96623fc3ef129c06e2b868',
+        'HOST': 'ec2-3-215-207-12.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
@@ -175,12 +185,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+ADMINS = (
+    ('Mohammadreza karami', 'mohammadreza.karami22@yahoo.com.com'),
+)
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dt0x3ff8y',
+    'API_KEY': '842463339847471',
+    'API_SECRET': 'd4CUuUKhO4JSVfy9DA41a4KhGGw',
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale/'),

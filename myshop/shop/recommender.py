@@ -6,7 +6,7 @@ from .models import Product
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
     port=settings.REDIS_PORT,
-    db=settings.REDIS_DB)
+    password=settings.REDIS_PASSWORD)
 
 class Recommender(object):
     def get_product_key(self, id):

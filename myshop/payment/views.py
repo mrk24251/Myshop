@@ -19,7 +19,7 @@ from zeep import Client
 # connect to redis
 r = redis.StrictRedis(host=settings.REDIS_HOST,
     port=settings.REDIS_PORT,
-    db=settings.REDIS_DB)
+    password=settings.REDIS_PASSWORD)
 # for test 'df04b34a-c7da-11e8-99d0-005056a205be'
 MERCHANT = 'df04b34a-c7da-11e8-99d0-005056a205be'
 client = Client('https://www.zarinpal.com/pg/services/WebGate/wsdl')
