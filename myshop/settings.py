@@ -99,7 +99,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
-CELERY_BROKER_URL = 'cmtjfjxf:MxPBcqiEZifOJl2aEasLUdUg7104Nsfy@finch.rmq.cloudamqp.com/cmtjfjxf'
+CELERY_BROKER_URL = 'amqps://cmtjfjxf:MxPBcqiEZifOJl2aEasLUdUg7104Nsfy@finch.rmq.cloudamqp.com/cmtjfjxf'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
