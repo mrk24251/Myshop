@@ -26,7 +26,7 @@ client = Client('https://www.zarinpal.com/pg/services/WebGate/wsdl')
 description = "توضیحات مربوط به تراکنش را در این قسمت وارد کنید"  # Required
 email = 'email@example.com'  # Optional
 mobile = '09123456789'  # Optional
-CallbackURL = 'https://erfanshop.herokuapp.com/payment/verify/' # Important: need to edit for realy server.
+CallbackURL = 'http://erfanshop.herokuapp.com/payment/verify/' # Important: need to edit for realy server.
 
 def send_request(request):
     order_id = request.session.get('order_id')
