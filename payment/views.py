@@ -31,7 +31,7 @@ CallbackURL = 'https://erfanshop.herokuapp.com/payment/verify/' # Important: nee
 def send_request(request):
     order_id = request.session.get('order_id')
     order = get_object_or_404(Order, id=order_id)
-    amount1 ='{:.9f}'.format(order.get_total_cost()* 10000)
+    amount1 ='{:.9f}'.format(order.get_total_cost()* 30000)
 
     result = client.service.PaymentRequest(MERCHANT, amount1, description, email, mobile, CallbackURL)
     if result.Status == 100:

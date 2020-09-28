@@ -64,13 +64,10 @@ def order_create(request):
             # set the order in the session
             request.session['order_id'] = order.id
             # redirect for payment
-            if request.session['currency'] == "IRR":
-                return redirect(reverse('payment:request'))
-            else:
-                return redirect(reverse('payment:process'))
-
+            return redirect(reverse('payment:request'))
     else:
         form = OrderCreateForm()
+
     return render(request,
     'orders/order/create.html',
     {'cart': cart, 'form': form})
