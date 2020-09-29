@@ -41,9 +41,9 @@
                       </ul>
                   {% endif %}
                   <div class="product-decs">
-                      <a class="inner-link" href="shop-4-column.html"><span>{{deal.name}}</span></a>
-                      <h2 style="display:none;" class="description-h2-1" ><a id="description" href="single-product.html" class="product-link">{{deal.description|linebreaks}}</a></h2>
-                      <h2 class="description-h2"><a href="single-product.html" class="product-link">{{deal.description|linebreaks|truncatechars:35}}</a></h2>
+                      <a class="inner-link" href="{{ deal.get_absolute_url }}"><span>{{deal.name}}</span></a>
+                      <h2 style="display:none;" class="description-h2-1" ><a id="description" href="{{ deal.get_absolute_url }}" class="product-link">{{deal.description|linebreaks}}</a></h2>
+                      <h2 class="description-h2"><a href="{{ deal.get_absolute_url }}" class="product-link">{{deal.description|linebreaks|truncatechars:35}}</a></h2>
                       <div class="rating-product">
                           <i class="ion-android-star"></i>
                           <i class="ion-android-star"></i>

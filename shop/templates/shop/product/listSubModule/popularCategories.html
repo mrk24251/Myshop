@@ -27,7 +27,7 @@
                             <h4>{{c.name}}</h4>
                         </div>
                         <span class="number_product">{{c.products.count}} {% trans "Products" %}</span>
-                        <a href="shop-4-column.html"> {% trans "Shop Now" %} <i class="ion-android-arrow-dropright-circle"></i></a>
+                        <a href="{% url "shop:product_list_by_category" c.slug %}"> {% trans "Shop Now" %} <i class="ion-android-arrow-dropright-circle"></i></a>
                     </div>
                 </div>
             </div>

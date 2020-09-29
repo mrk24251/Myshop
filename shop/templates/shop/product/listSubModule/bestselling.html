@@ -33,9 +33,9 @@
                         </div>
                     </div>
                     <div class="product-decs">
-                        <a class="inner-link" href="shop-4-column.html"><span>{{ product.name }}</span></a>
-                        <h2 style="display:none;" class="description-h2-1" ><a id="description" href="single-product.html" class="product-link">{{product.description|linebreaks}}</a></h2>
-                        <h2 class="description-h2"><a href="single-product.html" class="product-link">{{ product.description|truncatechars:16 }}</a></h2>
+                        <a class="inner-link" href="{{ product.get_absolute_url }}"><span>{{ product.name }}</span></a>
+                        <h2 style="display:none;" class="description-h2-1" ><a id="description" href="{{ product.get_absolute_url }}" class="product-link">{{product.description|linebreaks}}</a></h2>
+                        <h2 class="description-h2"><a href="{{ product.get_absolute_url }}" class="product-link">{{ product.description|truncatechars:16 }}</a></h2>
                         <div class="rating-product">
                             <i class="ion-android-star"></i>
                             <i class="ion-android-star"></i>
