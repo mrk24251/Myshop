@@ -37,7 +37,7 @@ isodate==0.6.0
 jsonfield==2.1.1
 kombu==4.6.11
 lockfile==0.12.2
-lxml==4.5.2
+lxml==4.9.1
 msgpack==0.6.2
 packaging==20.3
 pep517==0.8.2
